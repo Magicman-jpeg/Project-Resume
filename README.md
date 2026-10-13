@@ -4,7 +4,7 @@ A responsive personal portfolio presenting my Information Technology education, 
 
 ## Live Portfolio
 
-[View the website on GitHub Pages](https://magicman-jpeg.github.io/Resume-Project-beta/)
+[View the website on GitHub Pages](https://magicman-jpeg.github.io/Project-Resume/)
 
 ## Features
 
