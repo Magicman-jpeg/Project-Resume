@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Clifferson P. Arevalo — IT Portfolio</title>
+  <meta name="description" content="Portfolio of Jay Clifferson P. Arevalo — BS Information Technology student at PUP, aspiring Cloud Solutions Architect &amp; Systems Developer. AWS, Python, Java, and community leadership.">
+  <meta name="author" content="Jay Clifferson P. Arevalo">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jay Clifferson P. Arevalo — IT Portfolio">
+  <meta property="og:description" content="BS Information Technology student at PUP, aspiring Cloud Solutions Architect. AWS, Python, Java, and community leadership.">
+  <meta property="og:url" content="https://magicman-jpeg.github.io/Resume-Project-beta/">
+
+  <!-- Favicon: embedded SVG terminal tile, matches the ~/JC.md identity (no binary asset needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1A2B'/%3E%3Ctext x='7' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%233FE0F0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+
+  <!-- Standalone site stylesheet -->
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <!-- Fonts: Fraunces (display) + Space Grotesk (headings) + Inter (body) + Fira Code (mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+
+  <!-- Remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- GSAP for scroll + hover motion (CDN, no build step) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="grain bg-paper text-ink dark:bg-espresso dark:text-shell antialiased transition-colors duration-300">
+
+  <!-- Skip link -->
+  <a href="#about" class="sr-only focus:not-sr-only focus:btn-accent focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 border-b-2 border-ink/15 dark:border-shell/15 bg-paper/85 dark:bg-espresso/85 backdrop-blur-md transition-colors duration-300">
+    <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" aria-label="JC — home" class="group inline-flex items-center gap-1.5 font-mono font-semibold text-sm sm:text-base tracking-tight px-2.5 py-1 rounded-md border-2 border-ink/20 dark:border-shell/20 group-hover:border-atomic-orange transition-colors">
+        <span class="text-atomic-teal dark:text-atomic-teal-bright">~/</span><span>JC</span><span class="text-atomic-orange">.md</span><span class="inline-block w-[7px] h-4 bg-atomic-orange align-middle animate-blink" aria-hidden="true"></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-7 font-grotesk text-sm font-medium">
+        <li><a href="#about" class="hover:text-atomic-orange transition-colors">About</a></li>
+        <li><a href="#skills" class="hover:text-atomic-orange transition-colors">Skills</a></li>
+        <li><a href="#experience" class="hover:text-atomic-orange transition-colors">Experience</a></li>
+        <li><a href="#projects" class="hover:text-atomic-orange transition-colors">Projects</a></li>
+        <li><a href="#summary" class="hover:text-atomic-orange transition-colors">Summary</a></li>
+        <li><a href="#contact" class="hover:text-atomic-orange transition-colors">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode"
+          class="w-10 h-10 grid place-items-center rounded-lg border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-gold/20 transition-colors">
+          <i class="ri-moon-line text-lg hidden dark:inline-block"></i>
+          <i class="ri-sun-line text-lg inline-block dark:hidden"></i>
+        </button>
+        <button id="menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"
+          class="md:hidden w-10 h-10 grid place-items-center rounded-lg border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-gold/20 transition-colors">
+          <i class="ri-menu-line text-lg"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden hidden border-t-2 border-ink/15 dark:border-shell/15 bg-paper dark:bg-espresso">
+      <ul class="flex flex-col px-5 py-3 font-grotesk text-sm font-medium">
+        <li><a href="#about" class="block py-2.5 hover:text-atomic-orange">About</a></li>
+        <li><a href="#skills" class="block py-2.5 hover:text-atomic-orange">Skills</a></li>
+        <li><a href="#experience" class="block py-2.5 hover:text-atomic-orange">Experience</a></li>
+        <li><a href="#projects" class="block py-2.5 hover:text-atomic-orange">Projects</a></li>
+        <li><a href="#summary" class="block py-2.5 hover:text-atomic-orange">Summary</a></li>
+        <li><a href="#contact" class="block py-2.5 hover:text-atomic-orange">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- ============ HERO — asymmetric, big type, offset Y2K panel ============ -->
+    <section id="hero" class="relative pt-28 pb-20 sm:pt-32 sm:pb-24 grid-bg overflow-hidden">
+      <div class="aurora" aria-hidden="true"></div>
+      <pre aria-hidden="true" class="ascii-corner hidden sm:block top-20 right-4">  ┌─┐·░▒▓
+  ┤ ├─┐
+  └─┘ │·▒░
+ ·░▒ └──┐
+      │·▒
+ ▓▒░──┘</pre>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- top meta line -->
+        <div class="reveal flex items-center justify-between font-mono text-xs sm:text-sm text-atomic-teal dark:text-atomic-teal-bright mb-6">
+          <span>PORTFOLIO / <time data-current-year datetime="2026">2026</time></span>
+          <span class="text-ink/75 dark:text-shell/60">Quezon City, PH</span>
+        </div>
+
+        <!-- Animated ASCII wave banner (JS-driven; static fallback for reduced motion) -->
+        <pre id="ascii-wave" aria-hidden="true" class="ascii ascii-wave reveal mb-10 opacity-80 w-full max-w-full"></pre>
+
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 items-end">
+          <!-- Name — huge, baseline left -->
+          <div class="lg:col-span-8">
+            <pre aria-hidden="true" class="font-mono text-atomic-orange leading-none mb-5 animate-fade-up select-none text-[clamp(0.3rem,1.5vw,0.7rem)] overflow-hidden">     ██╗ ██████╗
+     ██║██╔════╝
+     ██║██║
+██   ██║██║
+╚█████╔╝╚██████╗
+ ╚════╝  ╚═════╝</pre>
+            <p class="font-mono text-sm text-ink/75 dark:text-shell/65 mb-4 animate-fade-up">Hi, my name is</p>
+            <h1 class="display-hero text-[clamp(3.2rem,11vw,8.5rem)] animate-fade-up">
+              Jay Clifferson<br>
+              <span class="text-atomic-orange">P. Arevalo</span>
+            </h1>
+            <div class="rule-thick text-ink/80 dark:text-shell/80 mt-8 mb-5 max-w-md"></div>
+            <h2 class="font-grotesk text-xl sm:text-3xl font-semibold max-w-xl">
+              Aspiring <span class="text-atomic-teal dark:text-atomic-teal-bright">Full-Stack Cloud Solutions Architect</span>
+            </h2>
+            <p class="font-mono text-sm text-ink/75 dark:text-shell/65 mt-4 max-w-xl">BSIT @ PUP · building toward cloud + systems · open to internships</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#projects"
+                class="btn-accent inline-flex items-center gap-2 px-6 py-3 rounded-lg font-grotesk font-semibold transition-transform hover:-translate-y-0.5">
+                <i class="ri-folder-open-line"></i> View Work
+              </a>
+              <a href="assets/docs/jay-arevalo-cv.pdf" download
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-ink dark:border-shell hover:bg-ink hover:text-paper dark:hover:bg-shell dark:hover:text-espresso font-grotesk font-semibold transition-colors">
+                <i class="ri-download-line"></i> Download CV
+              </a>
+            </div>
+          </div>
+
+          <!-- Offset Y2K panel + starburst, lower-right -->
+          <div class="lg:col-span-4 relative">
+            <div class="absolute -top-24 -right-4 w-32 h-32 sm:w-44 sm:h-44 animate-spin-slow pointer-events-none" aria-hidden="true">
+              <div class="starburst"></div>
+            </div>
+            <div class="y2k-panel p-6 sm:p-7 animate-fade-up">
+              <p class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright mb-3">// currently</p>
+              <p class="font-mono text-base">
+                <span class="text-ink/75 dark:text-shell/60">&gt;</span>
+                <span id="typing" class="text-atomic-orange font-medium"></span><span id="cursor" class="inline-block w-[2px] h-5 bg-atomic-orange align-middle animate-blink"></span>
+              </p>
+              <div class="hairline my-5 text-atomic-gold"></div>
+              <ul class="space-y-2.5 font-grotesk text-sm">
+                <li class="flex items-center gap-3"><i class="ri-shield-star-line text-atomic-teal dark:text-atomic-teal-bright"></i> DOST Scholar</li>
+                <li class="flex items-center gap-3"><i class="ri-award-line text-atomic-teal dark:text-atomic-teal-bright"></i> DataCamp Scholar</li>
+                <li class="flex items-center gap-3"><i class="ri-terminal-box-line text-atomic-teal dark:text-atomic-teal-bright"></i> Devskolar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ No. 01 — ABOUT (editorial two-column, espresso-tinted band) ============ -->
+    <section id="about" class="py-24 bg-ink/5 dark:bg-black/20 border-t-2 border-ink/15 dark:border-shell/15">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
+          <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">01</div>
+          <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Who I Am</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <!-- Left: editorial pull-quote intro -->
+          <div class="lg:col-span-7 reveal">
+            <p class="font-display text-2xl sm:text-3xl leading-snug mb-6">
+              I build cloud-powered applications and systems — from AWS chatbots to C-based banking
+              engines — while helping grow developer communities on campus.
+            </p>
+            <div class="space-y-4 text-ink/75 dark:text-shell/75 leading-relaxed">
+              <p>
+                I'm a <strong class="text-ink dark:text-shell">BS Information Technology</strong> student at the
+                Polytechnic University of the Philippines (2024–Present), passionate about cloud computing,
+                systems development, and building solutions that make a real difference.
+              </p>
+              <p>
+                As a <strong class="text-ink dark:text-shell">DataCamp Scholar</strong> and
+                <strong class="text-ink dark:text-shell">Devskolar</strong> (The Programmers' Guild),
+                I combine strong academic foundations with hands-on project work — and I'm deeply involved in
+                student developer communities across Microsoft, Google, and AWS campus clubs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: fact-sheet rail (plate framed) -->
+          <div class="lg:col-span-5 reveal">
+            <div class="plate p-6" style="--tick:#1BB5C9">
+              <p class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright mb-5">FACT SHEET</p>
+              <dl class="space-y-5 font-grotesk text-sm">
+                <div>
+                  <dt class="text-ink/75 dark:text-shell/60 mb-1">Education</dt>
+                  <dd class="font-medium">BS Information Technology — PUP (2024–Present)</dd>
+                  <dd class="text-ink/70 dark:text-shell/70">Senior High STEM — Ramon Magsaysay (Cubao) HS (2022–2024), With High Honors</dd>
+                </div>
+                <div>
+                  <dt class="text-ink/75 dark:text-shell/60 mb-1">Distinctions</dt>
+                  <dd class="flex flex-wrap gap-2 font-mono text-xs pt-1">
+                    <span class="px-3 py-1 rounded-full bg-atomic-orange/15 text-atomic-orange border border-atomic-orange/30">DataCamp Scholar</span>
+                    <span class="px-3 py-1 rounded-full bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright border border-atomic-teal/30">Devskolar</span>
+                    <span class="px-3 py-1 rounded-full bg-atomic-gold/20 text-atomic-orange border border-atomic-gold/40">DOST Scholar</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-ink/75 dark:text-shell/60 mb-1">Based in</dt>
+                  <dd class="font-medium">Quezon City, Philippines</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ No. 02 — SKILLS (spec-sheet, paper band) ============ -->
+    <section id="skills" class="py-24 border-t-2 border-ink/15 dark:border-shell/15">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
+          <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">02</div>
+          <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Technical Toolkit</h2>
+        </div>
+
+        <!-- Spec sheet: label on the left, chips on the right -->
+        <div class="reveal">
+          <div class="spec-row">
+            <div class="font-grotesk font-semibold flex items-center gap-2"><i class="ri-code-s-slash-line text-atomic-orange"></i> Languages</div>
+            <div class="flex flex-wrap gap-2 font-mono text-sm">
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">Python</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">C</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">Java</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">JavaScript</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">HTML5</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">CSS3</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="font-grotesk font-semibold flex items-center gap-2"><i class="ri-cloud-line text-atomic-teal dark:text-atomic-teal-bright"></i> Cloud &amp; Infra</div>
+            <div class="flex flex-wrap gap-2 font-mono text-sm">
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">AWS Lex</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">AWS Lambda</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">AWS Skill Builder</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">Google Cloud</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">GitHub</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">GitHub Copilot</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="font-grotesk font-semibold flex items-center gap-2"><i class="ri-palette-line text-atomic-orange"></i> Multimedia</div>
+            <div class="flex flex-wrap gap-2 font-mono text-sm">
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">Filmora</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">CapCut</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">Canva</span>
+              <span class="px-3 py-1 rounded-md border-2 border-ink/15 dark:border-shell/15">MS Office</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="font-grotesk font-semibold flex items-center gap-2"><i class="ri-medal-line text-atomic-gold"></i> Certifications</div>
+            <div class="flex flex-col gap-2.5 text-sm">
+              <div class="flex items-center justify-between gap-3"><span>Microsoft Learn — Get Started with Python</span><span class="status status-earned">Earned</span></div>
+              <div class="flex items-center justify-between gap-3"><span>Microsoft Learn — GitHub &amp; Copilot</span><span class="status status-earned">Earned</span></div>
+              <div class="flex items-center justify-between gap-3"><span>DataCamp Scholar (DataCamp &amp; GDG PUP)</span><span class="status status-earned">Earned</span></div>
+              <div class="flex items-center justify-between gap-3"><span>NXplorers — Scientific Innovation (2×)</span><span class="status status-earned">Earned</span></div>
+              <div class="flex items-center justify-between gap-3"><span>7th Place — 22nd Philippine Robotics Olympiad (2023)</span><span class="status status-earned">Earned</span></div>
+              <div class="flex items-center justify-between gap-3 opacity-80"><span>AWS Certified Cloud Practitioner</span><span class="status status-target">Target</span></div>
+              <div class="flex items-center justify-between gap-3 opacity-80"><span>AWS Certified Solutions Architect — Associate</span><span class="status status-target">Target</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ No. 03 — EXPERIENCE (timeline, gold-tinted band) ============ -->
+    <section id="experience" class="py-24 bg-atomic-gold/10 dark:bg-atomic-gold/5 border-t-2 border-ink/15 dark:border-shell/15">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
+          <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">03</div>
+          <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Experience</h2>
+        </div>
+
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute left-2 sm:left-3 top-2 bottom-2 w-0.5 bg-gradient-to-b from-atomic-orange via-atomic-gold to-atomic-teal"></div>
+
+          <div class="reveal relative mb-8 group">
+            <span class="absolute -left-[26px] sm:-left-[30px] top-1 w-4 h-4 rounded-full bg-atomic-orange ring-4 ring-atomic-orange/20 group-hover:scale-125 transition-transform"></span>
+            <div class="plate p-5 bg-paper dark:bg-espresso">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 class="font-grotesk font-semibold text-lg">Director of Operations &amp; Strategic Affairs</h3>
+                <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-atomic-orange/15 text-atomic-orange">Current</span>
+              </div>
+              <p class="text-atomic-teal dark:text-atomic-teal-bright font-medium text-sm mb-2">Microsoft Campus Club — PUP</p>
+              <p class="text-ink/75 dark:text-shell/75 text-sm">Leading operational strategy and coordinating cross-functional initiatives for one of the campus's largest tech communities.</p>
+            </div>
+          </div>
+
+          <div class="reveal relative mb-8 group">
+            <span class="absolute -left-[26px] sm:-left-[30px] top-1 w-4 h-4 rounded-full bg-atomic-teal ring-4 ring-atomic-teal/20 group-hover:scale-125 transition-transform"></span>
+            <div class="plate p-5 bg-paper dark:bg-espresso">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 class="font-grotesk font-semibold text-lg">Chief Community Relations Officer</h3>
+                <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">2026–2027</span>
+              </div>
+              <p class="text-atomic-teal dark:text-atomic-teal-bright font-medium text-sm mb-2">Google Developer Groups (GDG) on Campus PUP</p>
+              <p class="text-ink/75 dark:text-shell/75 text-sm">Driving community partnerships and engagement. Also serving as a <strong>Cloud Solution Cadet</strong>, deepening cloud expertise.</p>
+            </div>
+          </div>
+
+          <div class="reveal relative group">
+            <span class="absolute -left-[26px] sm:-left-[30px] top-1 w-4 h-4 rounded-full bg-atomic-gold ring-4 ring-atomic-gold/20 group-hover:scale-125 transition-transform"></span>
+            <div class="plate p-5 bg-paper dark:bg-espresso">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <h3 class="font-grotesk font-semibold text-lg">Dept. of Cloud Computing &amp; Infrastructure</h3>
+                <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-atomic-gold/25 text-atomic-orange">Skill Builder</span>
+              </div>
+              <p class="text-atomic-teal dark:text-atomic-teal-bright font-medium text-sm mb-2">AWS Cloud Club PUP</p>
+              <p class="text-ink/75 dark:text-shell/75 text-sm">Participating in the AWS Skill Builder Program, building hands-on cloud infrastructure competencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ No. 04 — PROJECTS (asymmetric) + LEADERSHIP band (paper) ============ -->
+    <section id="projects" class="relative overflow-hidden py-24 border-t-2 border-ink/15 dark:border-shell/15">
+      <pre aria-hidden="true" class="ascii-corner hidden sm:block bottom-10 left-2">▓▒░·
+│ ┌──┐
+└─┤  ├·░▒
+  └──┘
+ ·▒░ ▓</pre>
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
+          <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">04</div>
+          <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Featured Projects</h2>
+        </div>
+
+        <!-- Featured full-width plate -->
+        <article class="tilt reveal group flex flex-col lg:flex-row gap-6 plate p-6 sm:p-8 bg-paper dark:bg-espresso mb-6">
+          <div class="lg:w-1/2">
+            <div class="flex items-center gap-3 mb-4">
+              <i class="ri-pages-line text-4xl text-atomic-orange"></i>
+              <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-atomic-orange/15 text-atomic-orange">FEATURED</span>
+            </div>
+            <h3 class="font-display text-3xl mb-3">OOP E-Portfolio Website</h3>
+            <div class="flex items-center gap-3">
+              <a href="https://magicman-jpeg.github.io/EPortfolioArevalo.github.io/" target="_blank" rel="noopener" aria-label="Open the live OOP E-Portfolio" class="btn-accent inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-grotesk font-semibold transition-colors">
+                <i class="ri-external-link-line"></i> Live Demo
+              </a>
+              <a href="https://github.com/Magicman-jpeg/EPortfolioArevalo.github.io" target="_blank" rel="noopener" aria-label="View OOP E-Portfolio on GitHub" class="text-ink/75 dark:text-shell/60 hover:text-atomic-orange transition-colors">
+                <i class="ri-github-fill text-2xl"></i>
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 flex flex-col justify-center">
+            <p class="text-ink/75 dark:text-shell/75 text-sm mb-4">A portfolio hosted on GitHub Pages showcasing Java-based Object-Oriented Programming projects and coursework.</p>
+            <p class="outcome mb-4"><i class="ri-focus-2-line"></i> Deployed live on GitHub Pages</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-atomic-orange/15 text-atomic-orange">Java</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">GitHub Pages</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-gold/25 text-atomic-orange">OOP</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Secondary projects: offset 2-up -->
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Hospital Capacity Management System -->
+          <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
+            <div class="flex items-center mb-4">
+              <i class="ri-hospital-line text-3xl text-atomic-teal dark:text-atomic-teal-bright"></i>
+            </div>
+            <h3 class="font-grotesk font-semibold text-lg mb-2">Hospital Capacity Management System</h3>
+            <p class="text-ink/75 dark:text-shell/75 text-sm mb-4 flex-1">A full-stack hospital room &amp; bed capacity dashboard with parking-garage-style logic — admissions auto-fill beds, rooms flip to "Full" at capacity, and discharges reopen them. Features a live capacity grid, occupancy gauges, and color-coded status.</p>
+            <p class="outcome mb-4"><i class="ri-focus-2-line"></i> Built a full-stack capacity dashboard end to end</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">Node.js</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-orange/15 text-atomic-orange">Express</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-gold/25 text-atomic-orange">MySQL</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">Tailwind CSS</span>
+            </div>
+          </article>
+
+          <!-- BankerBot -->
+          <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
+            <div class="flex items-center mb-4">
+              <i class="ri-robot-2-line text-3xl text-atomic-orange"></i>
+            </div>
+            <h3 class="font-grotesk font-semibold text-lg mb-2">BankerBot</h3>
+            <p class="text-ink/75 dark:text-shell/75 text-sm mb-4 flex-1">An AWS chatbot built with Amazon Lex and AWS Lambda for handling automated banking transactions through natural conversation.</p>
+            <p class="outcome mb-4"><i class="ri-focus-2-line"></i> Conversational banking intents on serverless AWS</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">AWS</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-orange/15 text-atomic-orange">Amazon Lex</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-gold/25 text-atomic-orange">Lambda</span>
+            </div>
+          </article>
+
+          <!-- C Bank Account Simulation -->
+          <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
+            <div class="flex items-center mb-4">
+              <i class="ri-bank-line text-3xl text-atomic-teal dark:text-atomic-teal-bright"></i>
+            </div>
+            <h3 class="font-grotesk font-semibold text-lg mb-2">C Bank Account Simulation System</h3>
+            <p class="text-ink/75 dark:text-shell/75 text-sm mb-4 flex-1">A C-based banking management engine using file handling to persist and manage account data, deposits, and withdrawals.</p>
+            <p class="outcome mb-4"><i class="ri-focus-2-line"></i> Persistent account state via file handling</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">C</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-orange/15 text-atomic-orange">File Handling</span>
+            </div>
+          </article>
+
+          <!-- 2048 Game Clone -->
+          <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
+            <div class="flex items-center mb-4">
+              <i class="ri-gamepad-line text-3xl text-atomic-orange"></i>
+            </div>
+            <h3 class="font-grotesk font-semibold text-lg mb-2">2048 Game Clone</h3>
+            <p class="text-ink/75 dark:text-shell/75 text-sm mb-4 flex-1">An interactive browser game recreating the classic 2048, built from scratch with vanilla JavaScript, HTML5, and CSS3.</p>
+            <p class="outcome mb-4"><i class="ri-focus-2-line"></i> Grid merge logic built from scratch, no libraries</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-atomic-gold/25 text-atomic-orange">JavaScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-orange/15 text-atomic-orange">HTML5</span>
+              <span class="px-2.5 py-1 rounded-md bg-atomic-teal/15 text-atomic-teal dark:text-atomic-teal-bright">CSS3</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Leadership folded in as a slim band -->
+        <div class="reveal mt-10">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright">COMMUNITY</span>
+            <div class="hairline flex-1 text-ink/20 dark:text-shell/20"></div>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="flex items-center gap-3 p-4 plate bg-paper dark:bg-espresso">
+              <i class="ri-microsoft-line text-3xl text-atomic-orange"></i>
+              <div>
+                <h3 class="font-grotesk font-semibold text-sm">Microsoft Campus Club</h3>
+                <p class="text-xs text-ink/75 dark:text-shell/65">Director of Operations &amp; Strategic Affairs</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 plate bg-paper dark:bg-espresso">
+              <i class="ri-google-line text-3xl text-atomic-teal dark:text-atomic-teal-bright"></i>
+              <div>
+                <h3 class="font-grotesk font-semibold text-sm">GDG on Campus PUP</h3>
+                <p class="text-xs text-ink/75 dark:text-shell/65">Chief Community Relations Officer, Cloud Cadet</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 plate bg-paper dark:bg-espresso">
+              <i class="ri-amazon-line text-3xl text-atomic-gold"></i>
+              <div>
+                <h3 class="font-grotesk font-semibold text-sm">AWS Cloud Club PUP</h3>
+                <p class="text-xs text-ink/75 dark:text-shell/65">Cloud Computing &amp; Infrastructure, Skill Builder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Also involved with — full org list, grouped by year -->
+        <div class="reveal mt-10">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright">ALSO INVOLVED WITH</span>
+            <div class="hairline flex-1 text-ink/20 dark:text-shell/20"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            <!-- 2025 -->
+            <div>
+              <p class="index-plate text-atomic-orange text-2xl mb-4">2025</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">The Programmers' Guild (TPG)</span><span class="text-ink/75 dark:text-shell/60 text-right">Member</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">PUP Microsoft Student Community</span><span class="text-ink/75 dark:text-shell/60 text-right">Junior Web Developer</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">AWS Cloud Club PUP</span><span class="text-ink/75 dark:text-shell/60 text-right">Member, Dept. of Data Technologies</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">Google Developer Groups on Campus PUP</span><span class="text-ink/75 dark:text-shell/60 text-right">Cloud Solutions Team</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">Junior Blockchain Education Consortium PH — PUP Manila</span><span class="text-ink/75 dark:text-shell/60 text-right">Member</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">IBITS — Institute of Bachelors in IT Studies</span><span class="text-ink/75 dark:text-shell/60 text-right">Deputy Head, Linkages &amp; External Affairs</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">BSIT 2-3 "Cutie Pa2-3" (Class Section)</span><span class="text-ink/75 dark:text-shell/60 text-right">Creative Team Captain &amp; Graphic Designer</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">PSUCCESS</span><span class="text-ink/75 dark:text-shell/60 text-right">Public Relations Officer</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">AWS Kiro</span><span class="text-ink/75 dark:text-shell/60 text-right">Logistics</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">AWS User Group e:Novators Philippines</span><span class="text-ink/75 dark:text-shell/60 text-right">Logistics</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">CyberPH</span><span class="text-ink/75 dark:text-shell/60 text-right">Operations &amp; Logistics</span></li>
+              </ul>
+            </div>
+
+            <!-- 2026 -->
+            <div>
+              <p class="index-plate text-atomic-orange text-2xl mb-4">2026</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">Workflow PH</span><span class="text-ink/75 dark:text-shell/60 text-right">Operations</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">ARK PH — AcademiTech Research and Knowledge</span><span class="text-ink/75 dark:text-shell/60 text-right">Operations</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">MSC PUP</span><span class="text-ink/75 dark:text-shell/60 text-right">Operations Chief</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">Seekers Guild</span><span class="text-ink/75 dark:text-shell/60 text-right">Logistics Head</span></li>
+                <li class="flex justify-between gap-4 border-t-2 border-ink/10 dark:border-shell/10 pt-3"><span class="font-grotesk font-medium">GDG on Campus PUP</span><span class="text-ink/75 dark:text-shell/60 text-right">Community Relations Head</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ No. 05 — PROFESSIONAL SUMMARY ============ -->
+    <section id="summary" class="py-24 bg-ink/5 dark:bg-black/20 border-t-2 border-ink/15 dark:border-shell/15">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-10">
+          <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">05</div>
+          <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">In Summary</h2>
+        </div>
+
+        <div class="plate p-7 sm:p-9 bg-paper dark:bg-espresso reveal" style="--tick:#1BB5C9">
+          <p class="font-display text-xl sm:text-2xl leading-snug mb-5">
+            An Information Technology student building toward a career as a full-stack cloud solutions architect —
+            pairing hands-on project work (AWS, full-stack web, C systems) with active leadership in campus
+            developer communities.
+          </p>
+          <p class="text-ink/75 dark:text-shell/75 leading-relaxed mb-6">
+            DataCamp Scholar and DOST Scholar at PUP, with projects spanning serverless AWS chatbots,
+            a full-stack hospital capacity dashboard, and lower-level C systems. Currently deepening cloud
+            and systems skills through the AWS Skill Builder Program and campus club leadership — and seeking
+            opportunities to turn that foundation into real-world impact.
+          </p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm">
+            <span class="flex items-center gap-2"><i class="ri-map-pin-line text-atomic-orange"></i> Quezon City, Philippines</span>
+            <span class="flex items-center gap-2"><i class="ri-graduation-cap-line text-atomic-orange"></i> BSIT, PUP · Expected 2028</span>
+            <span class="flex items-center gap-2"><i class="ri-briefcase-line text-atomic-orange"></i> Open to internships &amp; entry-level roles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page-wide ASCII artwork layer; decorative and intentionally behind content. -->
+    <div id="ascii-art-background" class="ascii-art-background" aria-hidden="true">
+      <div class="ascii-art-field">
+          <!-- Artwork 1 -->
+          <div class="ascii-art-panel ascii-art-panel--portrait">
+            <pre class="ascii-art" aria-hidden="true">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⡿⢿⣿⣛⣟⣿⡿⢿⢿⣷⣦⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣯⣷⣿⣿⣿⢟⠃⢿⣟⣿⣿⣾⣷⣽⣺⢆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⢿⣾⢧⣏⡴⠀⠈⢿⣘⣿⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢹⣿⢠⡶⠒⢶⠀⠀⣠⠒⠒⠢⡀⢿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⠸⣄⣠⡾⠀⠀⠻⣀⣀⡼⠁⢸⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⣿⣿⠀⠀⠀⡔⠢⠤⠔⠒⢄⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣄⠀⠸⡀⠀⠀⠀⠀⢀⡇⠠⣸⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣦⣮⣉⢉⠉⠩⠄⢴⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⢻⣿⣟⢟⡁⠀⠀⠀⠀⢇⠻⣿⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⠿⣿⡈⠋⠀⠀⡇⠀⠀⠀⢰⠃⢠⣿⡟⣿⣿⢻⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠸⡆⠛⠇⢀⡀⠀⡇⠀⠀⡞⠀⠀⣸⠟⡊⠁⠚⠌⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡍⠨⠊⣒⠴⠀⡇⡴⠋⡋⢐⠐⠅⡀⠐⢠⠕⠂⢂⠀⠀⠀</pre>
+          </div>
+
+          <!-- Artwork 2 -->
+          <div class="ascii-art-panel ascii-art-panel--wide">
+            <pre class="ascii-art" aria-hidden="true">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡤⠶⠶⠒⠒⠒⠒⠲⠶⠦⢤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠈⠉⠓⠶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⡾⠋⠁⠀⣀⡀⠀⠀⢀⣴⡶⠀⡀⣠⡆⠀⠀⠀⢀⠀⠀⠀⠀⠀⠙⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⠞⠋⠁⠀⣰⡾⢋⡀⠀⠀⣰⡟⠀⠀⣤⣿⡿⠁⢈⣶⠏⢻⡌⠐⠁⢸⣆⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⠀⠀⠀⠀⣼⠟⢠⡿⠇⠂⣴⡟⣀⣀⡾⢋⣾⠁⣠⡿⠁⠀⠈⢷⡐⢂⢸⡿⣆⠀⠀⢿⡄⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⡞⠃⠀⠀⠀⠀⠀⣼⠏⢠⡿⢁⣤⣶⣿⢟⣻⠟⠙⣻⣿⣾⠏⠀⠀⠀⠀⠈⣷⣘⣘⣧⠹⣖⠀⠸⣷⠀⠀⠀⠀⠸⣆⣠⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡼⠋⠀⠀⠀⠀⠀⠀⣼⠏⢀⣿⡃⠛⣽⢿⣯⣿⣿⣶⣦⣿⣾⠋⠀⠀⠀⠀⠀⠀⠘⢿⡻⣿⠛⠻⣷⣤⣿⡄⠀⢀⡀⠀⢹⡇⠀⠀⠈⠙⠳⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⡞⠁⠀⠀⠀⠀⠀⠀⣸⡿⣸⣿⡿⠂⣾⣯⣾⣿⡷⠋⠙⣿⣿⣿⡦⠀⠀⠀⠀⠀⠀⣀⣼⣷⣿⣦⣤⣹⣏⢻⣷⣤⢈⣿⠀⠈⣿⠀⠀⠀⠀⠀⠈⢳⣄⠀⠀⠀⠀
+⠀⠀⢠⡟⠀⠀⠀⠀⠁⠀⠀⠀⣿⣿⡿⢻⣇⣾⢳⡟⠀⣾⣿⣦⣴⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⣻⠟⠉⢻⣿⣿⣿⢿⣾⡿⣿⢿⣿⡆⠄⣿⡂⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀
+⠀⢀⡿⠀⠀⡀⠀⠀⠀⠀⠀⢈⣿⣿⣵⢻⣿⠇⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⢀⣿⣧⣤⣼⣿⣿⣿⡇⠿⣧⢻⣄⣿⡇⠀⣿⠇⢈⠀⠀⠀⠀⠀⠀⢹⡆⠀⠀
+⠀⣾⠁⠀⠁⠀⠀⠀⢀⣠⠾⠋⠀⣿⠿⠸⣿⠀⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⢻⡈⣿⣿⠷⣤⣿⠁⠀⠀⠀⠁⠂⠀⠀⠀⢿⠀⠀
+⢠⡇⠀⠀⢀⣠⡴⠞⠋⠁⠀⠀⠀⢹⡀⢀⡇⠀⠀⠀⠈⢻⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⣸⠇⢸⣿⣤⠘⡟⣧⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠀
+⠈⠛⠖⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠻⣼⠃⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⠟⠀⠰⠟⠀⣠⢻⢼⢡⠇⠘⢧⡀⠀⠀⠀⠂⠀⠀⠀⢿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠋⠁⠀⠀⠀⠀⢠⣏⡟⠀⡾⠀⠀⠈⢳⣄⠀⠀⠀⠀⠀⠀⢸⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡖⠲⠶⠤⠤⠤⢤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣠⡾⠁⠀⠀⠀⠀⠙⢷⡄⠀⠀⠀⠀⢸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢧⡀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠓⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⠀⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣄⡀⠀⠀⠀⠀⠸⣇⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⣸⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣤⣀⠀⠀⠙⠳⠦⡤⠶⠋⠀⠀⠀⠀⠀⢀⣠⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠓⠶⣤⠄⢠⣤⣀⣤⣤⠤⠶⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡖⢻⡇⠀⣼⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡛⣿⣿⣟⣿⣷⣾⠿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⡇⠈⢻⣿⣟⠉⠁⣲⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡷⣿⠀⠀⢸⣿⠃⠀⠀⢺⠶⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⢿⡏⠀⠀⢸⢿⡆⠐⠀⢸⣿⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⣾⠃⠀⠀⠻⠘⠇⠀⠀⢸⢻⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠑⣿⣿⣶⣤⣶⣶⣶⣶⣶⡞⢸⡞⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⠴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⠿⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡇⠀⢻⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣄⣠⡇⠀⢸⡄⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢹⠁⠀⠈⡏⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣷⣾⠀⠀⠀⣷⠾⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠿⠛⠋⠀⠀⠀⠻⢤⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+          </div>
+
+          <!-- Artwork 3 -->
+          <div class="ascii-art-panel ascii-art-panel--feature">
+            <pre class="ascii-art" aria-hidden="true">⠀⠀⠤⠔⢆⣀⡠⠤⠴⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠃⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⠀
+⠄⠀⠀⠀⠀⠀⠀⠀⠀⣘⡄⠀⠀⠀⠀⡄⠀⠀⠀⢸⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⢴⣊⣉⣉⡀⠀⠀⠀⠀⠀⡇⠀⠀⠀⡆⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀
+⠀⠀⠄⠀⠀⠀⠀⠀⠀⠈⠓⢄⠀⠀⠀⠇⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀
+⠀⠀⠀⠀⠀⠰⣩⠃⠀⣀⠀⠀⢳⠀⢠⠂⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
+⠀⠀⡜⢹⣀⡀⠀⠀⡜⠀⡇⠀⠀⡇⠘⠒⢢⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⡇⠀⡰⠁⠀⡜⠀⣠⠃⠀⠀⡇⣠⢖⣾⣿⣿⣿⣿⣿⣿⣿⣿⣹⣿⣿⣿⡟⡞⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠈⠉⠀⢀⠞⠀⠹⡀⠀⢀⠜⠀⢇⣾⣿⣿⣿⣿⣿⣿⣿⣿⢏⣿⣿⣿⡟⢰⠃⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⢄⡀⠀⣠⠊⠀⠀⠀⠱⠖⠁⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⠏⢸⣿⣿⡏⠁⡼⠀⠀⠀⢿⣿⣿⣿⣿⣧⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠏⠀⣼⣿⣿⠁⠀⡇⠀⠀⠀⢸⣿⣿⣿⣿⣿⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⡿⠙⢢⣿⡿⣿⠀⠀⠃⠀⠀⠀⠈⣿⡿⣿⣿⣿⡇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣷⣺⣽⣿⣿⣿⣄⡀⡀⠀⠀⠀⠀⢻⣷⠹⣿⣿⣧⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡿⣿⣿⠟⢉⣴⣾⣿⣯⠁⠇⠀⠀⠀⠀⢀⣿⣇⣙⣿⣿⣤⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⢣⡿⠁⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠘⣿⢋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣸⠇⠀⣼⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣽⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡿⣿⠀⠀⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⣿⠀⢸⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠻⡀⢘⠉⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠙⠺⠿⠿⠿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠊⢃⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⣶⣿⣿⣿⣿⣿⣿⠇⢀⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣿⣿⠃⢠⣾⣿⣿⣿⣿⣿⣿⣿⡟⡆⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⡌⠉⠉⠉⢸⣿⣿⣿⣿⣿⣿⣿⠃⠃⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠙⣿⣶⠶⠖⠒⠂⢻⣦⠀⠀⠀⠀⠀⠁⠀⠁⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡟⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿⡿⣿⣿⣦⡀⠀⠀⠀⢰⡟⠁⠀⠀⠀⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⠃⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣿⣿⣿⡇⠀⠀⠘⢿⣿⣿⣷⣄⠀⢸⡆⠀⠀⠀⠀⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠋⠉⢻⣿⣇⠀⠀⠀⠘⣿⣿⣿⣿⣿⣦⣧⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⣤⣽⣿⣦⣄⡀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣀⣼⣧⣤⣴⣶⣿⠟⠛⢩⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⢠⡾⠋⠀⢀⣤⡶⠟⠋⠉⠀⠉⢿⣆⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+⠀⠀⠀⠀⠀⣰⣟⡥⠤⠰⠛⠉⠀⠀⠀⠀⣀⣠⣼⣿⣼⣿⣿⣿⠟⠛⠛⢉⣩⣵⡾⣿⡏⠁⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀
+⠀⠀⠀⠀⢠⡿⠋⠀⠀⠀⠀⢀⣀⣠⠴⠚⠉⠀⠈⠉⠻⣿⣯⠀⠀⢠⣶⠟⠋⠁⠀⠇⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀
+⠀⠀⠀⠀⢸⡀⠀⠀⣠⠴⠚⠋⠁⠀⣀⠀⣀⣀⣠⣤⣤⣿⣿⣧⠀⢸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
+⠀⠀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠘⠋⠉⠉⠉⠀⠀⠀⠀⠀⠹⣿⣿⠿⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
+⠀⠀⠀⠀⢀⣴⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⡄⣿⢿⣔⠤⣀⠈⠉⠻⢦⣄⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⣾⡿⠏⠻⢿⣶⣶⣦⣄⠀⠀⠀⠀⠘⠋⠠⠿⢿⣿⣾⡏⢿⣦⢄⡉⠒⠤⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠉⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀
+⠀⠀⠀⣼⡟⠀⠀⢠⡄⡈⣻⣿⢷⣯⣉⠓⢤⡀⠀⠀⠀⠀⠈⠙⠻⣶⣿⣧⠈⢓⣾⣿⡿⣫⣿⡿⠋⣼⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀
+⠀⠀⣰⡟⠀⠀⠀⠈⣧⠱⡄⢙⣧⣺⣿⣷⣦⡹⡦⡀⠀⠀⠀⠀⠀⠀⠹⢿⣷⣿⣿⢋⡼⠟⠋⢀⣾⣿⡿⠟⣝⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣧⣄⠀⠀⠀
+⠀⢠⡟⠀⠀⠀⠀⠀⣇⣧⣹⢻⡟⠋⠛⣻⣿⣿⠾⢮⣄⠀⠀⠀⠀⠀⠀⣼⡿⡟⡇⡀⠀⠀⢀⡾⠟⠉⣠⢾⠟⠁⠀⠀⠀⠀⠀⢀⣀⠤⣴⣾⣿⣿⣿⠃⣿⡿⣿⣿⣄⠙⢿⣦⠀
+⠀⣾⠁⠀⠀⠀⠀⢀⣿⡪⡿⣿⣀⢀⣤⣽⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡃⠧⡸⣣⠰⡀⠀⠀⠀⠀⠉⠁⢀⣀⠠⠤⠒⠒⠉⣁⣤⣾⣿⣿⣿⣋⣭⣿⣯⠾⢷⣿⣿⣷⡌⢏⠀
+⢸⡃⠀⠀⠀⠀⠀⢀⡿⣻⡿⢣⡈⠓⢌⡛⢿⣄⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣼⡀⢣⢫⢆⢣⣠⡤⡔⠒⠊⣉⣀⠤⠤⠒⠒⢉⣉⣠⣭⣿⡾⠿⠟⠛⠉⠁⠀⠀⠀⠈⠳⣌⣿⡌⢧
+⣟⡇⠀⠀⠀⠀⠀⢸⣷⡿⠁⠀⠈⠒⢄⡉⠢⣌⠻⢶⣤⣀⡀⠀⣾⣟⡙⠛⣿⣷⣬⣞⣟⣇⢧⢷⠓⣈⣉⣤⣤⠤⠶⠒⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⡌
+⣿⡇⣤⣤⣀⠀⠀⢨⡟⠁⠀⠀⠀⠀⠀⠉⠢⣄⠙⠢⢌⣚⢭⣛⠾⠿⠿⠿⠉⣿⣿⣿⣛⣬⣶⢿⠻⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡧
+⠿⠃⠀⠉⠛⢷⣦⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢝⡫⠖⣬⣙⠲⢤⣤⣾⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻
+⠀⠀⠀⠀⠀⣰⠏⠙⠣⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠋⢛⡷⢤⣛⣧⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠊⢎⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ CONTACT FOOTER ============ -->
+  <footer id="contact" class="relative z-10 overflow-hidden py-24 border-t-2 border-ink/15 dark:border-shell/15 grid-bg">
+    <pre aria-hidden="true" class="ascii-corner hidden sm:block top-10 right-4">·░▒▓
+┌──┐ │
+│  ├─┘
+└──┘·▒░</pre>
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <div class="reveal flex justify-center mb-5">
+        <div class="w-14 h-14 animate-spin-slow" aria-hidden="true"><div class="starburst"></div></div>
+      </div>
+
+      <pre aria-hidden="true" class="ascii ascii-static reveal mb-6 inline-block text-left mx-auto">+------------------------------------------+
+|  <span class="glow">></span> connection_request: <span class="glow">OPEN</span>              |
+|  <span class="glow">></span> status.............: available        |
+|  <span class="glow">></span> response_time......: ~24h             |
++------------------------------------------+</pre>
+
+      <h2 class="display-hero text-5xl sm:text-7xl mb-4 reveal">Let's Connect</h2>
+      <p class="text-ink/75 dark:text-shell/75 mb-8 reveal">
+        I'm always open to new opportunities, collaborations, and conversations about cloud and tech communities.
+      </p>
+
+      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+        <a href="mailto:jaycliffersonarevalo81@gmail.com" class="btn-accent inline-flex items-center gap-2 px-6 py-3 rounded-lg font-grotesk font-semibold transition-transform hover:-translate-y-0.5">
+          <i class="ri-mail-send-line"></i> Email Me
+        </a>
+        <a href="https://github.com/Magicman-jpeg" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-ink dark:border-shell hover:bg-ink hover:text-paper dark:hover:bg-shell dark:hover:text-espresso font-grotesk font-semibold transition-colors">
+          <i class="ri-github-fill"></i> GitHub
+        </a>
+      </div>
+
+      <div class="reveal flex items-center justify-center flex-wrap gap-3 mb-10">
+        <a href="https://github.com/Magicman-jpeg" target="_blank" rel="noopener" aria-label="GitHub" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-github-fill text-lg"></i></a>
+        <a href="https://www.linkedin.com/in/jaycliffersonparevalo/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-linkedin-fill text-lg"></i></a>
+        <a href="https://www.facebook.com/jayclifferson.arevalo" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-facebook-fill text-lg"></i></a>
+        <a href="https://www.instagram.com/arevalo.depedqc/" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-instagram-line text-lg"></i></a>
+        <a href="https://discord.gg/5ktg7kau" target="_blank" rel="noopener" aria-label="Discord" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-discord-fill text-lg"></i></a>
+        <a href="https://learn.microsoft.com/en-us/users/jaycliffersonparevalo-6300/" target="_blank" rel="noopener" aria-label="Microsoft Learn" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-microsoft-fill text-lg"></i></a>
+        <a href="https://www.meetup.com/members/428929098/" target="_blank" rel="noopener" aria-label="Meetup" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-group-fill text-lg"></i></a>
+        <a href="mailto:jaycliffersonarevalo81@gmail.com" aria-label="Email" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-mail-line text-lg"></i></a>
+      </div>
+
+      <p class="font-mono text-sm text-ink/75 dark:text-shell/60">
+        &copy; <time data-current-year datetime="2026">2026</time> Jay Clifferson P. Arevalo. Built with HTML, CSS &amp; vanilla JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
