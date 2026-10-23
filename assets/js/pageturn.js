@@ -35,6 +35,8 @@
   const pager = document.getElementById('page-pager');
   const hint = document.getElementById('page-hint');
   const countEl = document.querySelector('.pageturn-count');
+  const intro = document.getElementById('pageturn-intro');
+  const INTRO_SEEN_KEY = 'pageturn-intro-seen';
 
   const SECTION_LABELS = {
     hero: 'Intro',
@@ -86,6 +88,37 @@
     hint.classList.remove('is-hidden');
     window.clearTimeout(hintTimer);
     hintTimer = window.setTimeout(() => hint.classList.add('is-hidden'), 4200);
+  }
+
+  // ---- One-time intro tooltip (first visit only) -------------------------
+  let introWired = false;
+  function wireIntroOnce() {
+    if (introWired || !intro) return;
+    introWired = true;
+    const dismiss = () => {
+      intro.classList.remove('is-visible');
+      window.setTimeout(() => { intro.hidden = true; }, 350);
+      try { localStorage.setItem(INTRO_SEEN_KEY, '1'); } catch (_) {}
+    };
+    const closeBtn = document.getElementById('pageturn-intro-close');
+    const okBtn = document.getElementById('pageturn-intro-ok');
+    if (closeBtn) closeBtn.addEventListener('click', dismiss);
+    if (okBtn) okBtn.addEventListener('click', dismiss);
+    // Esc dismisses it too.
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !intro.hidden) dismiss();
+    });
+  }
+
+  function showIntroOnce() {
+    if (!intro) return;
+    let seen = false;
+    try { seen = localStorage.getItem(INTRO_SEEN_KEY) === '1'; } catch (_) {}
+    if (seen) return;
+    wireIntroOnce();
+    intro.hidden = false;
+    // next frame so the entrance transition runs
+    window.requestAnimationFrame(() => intro.classList.add('is-visible'));
   }
 
   // ---- Applying page state ----------------------------------------------
@@ -263,6 +296,7 @@
     applyStaticState();
     setPageNumber(index);
     showHintBriefly();
+    showIntroOnce();
 
     window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('keydown', onKey);
@@ -277,6 +311,7 @@
     engaged = false;
     root.classList.remove('pageturn-on', 'pageturn-animating');
     if (pager) pager.hidden = true;
+    if (intro) { intro.classList.remove('is-visible'); intro.hidden = true; }
     pages.forEach((page) => {
       page.classList.remove(
         'pageturn-page', 'is-current', 'is-next', 'is-prev',
