@@ -695,13 +695,20 @@
   <!-- Movement hint for first-time visitors. -->
   <div id="page-hint" aria-hidden="true"><i class="ri-arrow-up-down-line"></i> scroll or use ↑ ↓ to turn the page</div>
 
-  <!-- ============ MUSIC PLAYER (progressive enhancement; off by default) ============ -->
-  <div id="music-player" role="group" aria-label="Ambient music player" hidden>
-    <button id="music-toggle" type="button" aria-pressed="false" aria-label="Play ambient music" title="Play / pause ambient music">
+  <!-- ============ MUSIC PLAYER (progressive enhancement; off by default) ============
+       To use your OWN music: drop an audio file in the repo at
+         assets/audio/track.mp3
+       and it will play on a loop. To use a different file/URL instead, add a
+       data-src attribute to the element below, e.g.
+         data-src="assets/audio/my-song.mp3"
+       If no file is found, the player falls back to a generated ambient tone.
+       (See assets/audio/README.md for details.) -->
+  <div id="music-player" role="group" aria-label="Music player" hidden>
+    <button id="music-toggle" type="button" aria-pressed="false" aria-label="Play music" title="Play / pause music">
       <i class="ri-play-fill" aria-hidden="true"></i>
     </button>
     <span id="music-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span id="music-label">ambient</span>
+    <span id="music-label">music</span>
     <span class="music-vol">
       <i class="ri-volume-down-line" aria-hidden="true"></i>
       <input id="music-volume" type="range" min="0" max="100" value="60" step="1"
