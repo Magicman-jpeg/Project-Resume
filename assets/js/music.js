@@ -247,8 +247,10 @@
   }
 
   function wireControls() {
-    toggle.addEventListener('click', () => { playing ? pauseMusic() : playMusic(); });
-    volume.addEventListener('input', () => applyVolume(Number(volume.value) / 100));
+    // Stop the first-load attention pulse as soon as the user engages the player.
+    const markTouched = () => player.classList.add('touched');
+    toggle.addEventListener('click', () => { markTouched(); playing ? pauseMusic() : playMusic(); });
+    volume.addEventListener('input', () => { markTouched(); applyVolume(Number(volume.value) / 100); });
     document.addEventListener('visibilitychange', () => {
       if (document.hidden && playing) pauseMusic();
     });

@@ -2425,21 +2425,21 @@ main > section {
 }
 #page-pager .pager-dot {
   display: flex; align-items: center; gap: .5rem;
-  background: none; border: 0; cursor: pointer; padding: .1rem;
-  color: var(--accent-2); opacity: .55; transition: opacity .25s ease, color .25s ease;
+  background: none; border: 0; cursor: pointer; padding: .15rem;
+  color: var(--accent-2); opacity: .75; transition: opacity .25s ease, color .25s ease;
 }
-#page-pager .pager-dot:hover { opacity: .9; }
+#page-pager .pager-dot:hover { opacity: 1; }
 #page-pager .pager-dot .pager-label {
-  font-size: .62rem; letter-spacing: .04em; text-transform: uppercase;
+  font-size: .64rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
   opacity: 0; transform: translateX(6px); transition: opacity .25s ease, transform .25s ease;
 }
 #page-pager .pager-dot:hover .pager-label,
 #page-pager .pager-dot.is-active .pager-label { opacity: 1; transform: translateX(0); }
 #page-pager .pager-dot .pager-tick {
-  width: 22px; height: 2px; background: currentColor; display: inline-block; transition: width .25s ease;
+  width: 26px; height: 3px; border-radius: 2px; background: currentColor; display: inline-block; transition: width .25s ease;
 }
 #page-pager .pager-dot.is-active { color: var(--accent); opacity: 1; }
-#page-pager .pager-dot.is-active .pager-tick { width: 40px; }
+#page-pager .pager-dot.is-active .pager-tick { width: 46px; }
 
 /* Oversized transient page number shown during a turn (Exo-Ape-style scale, original). */
 .pageturn-count {
@@ -2455,12 +2455,16 @@ main > section {
 #page-hint {
   position: fixed; z-index: 55; left: 50%; bottom: clamp(.8rem, 3vw, 1.6rem);
   transform: translateX(-50%);
-  font-family: 'Fira Code', ui-monospace, monospace; font-size: .68rem;
-  padding: .35rem .8rem; border-radius: 999px;
-  border: 1px solid var(--accent-2); color: var(--accent-2);
-  background: rgba(14,26,43,.0); display: none; align-items: center; gap: .5rem;
-  opacity: .8; transition: opacity .4s ease;
+  font-family: 'Fira Code', ui-monospace, monospace; font-size: .72rem; font-weight: 500;
+  padding: .45rem .9rem; border-radius: 999px;
+  border: 2px solid var(--accent-2); color: var(--ink, #2F4156);
+  background: rgba(245,239,235,.95); display: none; align-items: center; gap: .5rem;
+  box-shadow: 0 6px 24px rgba(47,65,86,.18);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  opacity: .95; transition: opacity .4s ease;
 }
+.dark #page-hint { color: var(--shell, #DCEAF2); background: rgba(14,26,43,.9); box-shadow: 0 6px 26px rgba(0,0,0,.45); }
+#page-hint i { color: var(--accent); font-size: .95rem; }
 .pageturn-on #page-hint { display: inline-flex; }
 #page-hint.is-hidden { opacity: 0; }
 
@@ -2486,29 +2490,48 @@ main > section {
 #music-player {
   position: fixed; z-index: 56; left: clamp(.8rem, 3vw, 1.6rem); bottom: clamp(.8rem, 3vw, 1.6rem);
   display: flex; align-items: center; gap: .55rem;
-  padding: .4rem .55rem; border-radius: 999px;
+  padding: .45rem .7rem; border-radius: 999px;
   font-family: 'Fira Code', ui-monospace, monospace;
-  border: 1px solid var(--accent-2);
-  background: rgba(245,239,235,.78); color: var(--ink, #2F4156);
+  border: 2px solid var(--accent-2);
+  background: rgba(245,239,235,.95); color: var(--ink, #2F4156);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   box-shadow: 0 6px 24px rgba(47,65,86,.18);
   transition: box-shadow .25s ease, border-color .25s ease;
 }
 .dark #music-player {
-  background: rgba(14,26,43,.72); color: var(--shell, #DCEAF2);
+  background: rgba(14,26,43,.9); color: var(--shell, #DCEAF2);
   box-shadow: 0 6px 26px rgba(0,0,0,.45);
 }
 #music-player.is-playing { border-color: var(--accent); }
 
-/* Play / pause (the on/off control) */
-#music-toggle {
-  width: 2.1rem; height: 2.1rem; flex: 0 0 auto;
-  display: grid; place-items: center; cursor: pointer;
-  border-radius: 50%; border: 1px solid currentColor; background: none; color: inherit;
-  transition: background-color .2s ease, color .2s ease;
+/* Gentle attention pulse for the first few seconds so the control is noticed,
+   then it settles. Removed once the user interacts (JS adds .touched). */
+#music-player:not(.touched) {
+  animation: music-attention 2.2s ease-in-out 1s 3;
 }
-#music-toggle:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-#music-toggle i { font-size: 1.1rem; line-height: 1; }
+@keyframes music-attention {
+  0%, 100% { box-shadow: 0 6px 24px rgba(47,65,86,.18); }
+  50%      { box-shadow: 0 6px 24px rgba(47,65,86,.18), 0 0 0 6px rgba(27,181,201,.22); }
+}
+.dark #music-player:not(.touched) {
+  animation: music-attention-dark 2.2s ease-in-out 1s 3;
+}
+@keyframes music-attention-dark {
+  0%, 100% { box-shadow: 0 6px 26px rgba(0,0,0,.45); }
+  50%      { box-shadow: 0 6px 26px rgba(0,0,0,.45), 0 0 0 6px rgba(63,224,240,.3); }
+}
+
+/* Play / pause (the on/off control) — filled accent so it clearly reads as a button */
+#music-toggle {
+  width: 2.4rem; height: 2.4rem; flex: 0 0 auto;
+  display: grid; place-items: center; cursor: pointer;
+  border-radius: 50%; border: 2px solid var(--accent);
+  background: var(--accent); color: var(--on-accent);
+  transition: transform .15s ease, filter .2s ease;
+}
+#music-toggle:hover { transform: scale(1.06); filter: brightness(1.08); }
+#music-toggle:active { transform: scale(0.96); }
+#music-toggle i { font-size: 1.25rem; line-height: 1; }
 
 /* Little animated equalizer bars that pulse while playing */
 #music-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 1rem; width: 1.1rem; }
@@ -2543,7 +2566,10 @@ main > section {
   width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
   border: 2px solid var(--on-accent); cursor: pointer;
 }
-#music-label { font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; opacity: .75; white-space: nowrap; }
+#music-label {
+  font-size: .72rem; font-weight: 600; letter-spacing: .02em;
+  opacity: .95; white-space: nowrap;
+}
 
 /* Collapse the text label on very small screens to keep the pill compact. */
 @media (max-width: 480px) {
