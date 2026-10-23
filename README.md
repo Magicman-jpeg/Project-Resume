@@ -9,6 +9,8 @@ A responsive personal portfolio presenting my Information Technology education, 
 ## Features
 
 - Responsive desktop and mobile layout
+- **Page-turn navigation** on large screens: each section turns like a page (wheel, arrow/page keys, swipe, nav links, or the side pager) with a 3D curl, page indicator, and hash-synced deep links — progressively enhanced, so it falls back to normal scrolling on touch/small screens, with reduced motion, or without JavaScript
+- **Ambient music player**: a floating control to turn music on/off and adjust the volume up/down, with the choice remembered between visits. The audio is generated in the browser (Web Audio API), so there is no external file and no music-licensing concern. It is off by default (never autoplays)
 - Light and dark appearances with saved preference
 - Accessible color contrast and reduced-motion support
 - Fixed ASCII-art parallax background
@@ -25,7 +27,9 @@ A responsive personal portfolio presenting my Information Technology education, 
 │   ├── docs/
 │   │   └── jay-arevalo-cv.pdf
 │   └── js/
-│       └── main.js
+│       ├── main.js
+│       ├── pageturn.js   # Page-turn navigation (progressive enhancement)
+│       └── music.js      # Ambient music player (Web Audio, off by default)
 ├── index.html
 └── README.md
 ```

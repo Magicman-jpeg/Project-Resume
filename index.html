@@ -78,6 +78,9 @@
     </div>
   </header>
 
+  <!-- Page-turn stage: wraps the paged content so JS can apply 3D perspective.
+       Without JS this is an ordinary block and the site scrolls normally. -->
+  <div id="page-stage">
   <main class="relative z-10">
     <!-- ============ HERO — asymmetric, big type, offset Y2K panel ============ -->
     <section id="hero" class="relative pt-28 pb-20 sm:pt-32 sm:pb-24 grid-bg overflow-hidden">
@@ -680,8 +683,36 @@
       </p>
     </div>
   </footer>
+  </div><!-- /#page-stage -->
+
+  <!-- ============ PAGE-TURN UI (progressive enhancement; hidden until JS) ============ -->
+  <!-- Vertical page indicator. Buttons are real controls so keyboard + AT work. -->
+  <nav id="page-pager" aria-label="Page navigation" hidden></nav>
+  <!-- Transient oversized page number shown during a turn (decorative). -->
+  <div class="pageturn-count" aria-hidden="true"></div>
+  <!-- Sweeping fold sheen during a turn (decorative). -->
+  <div class="pageturn-fold" aria-hidden="true"></div>
+  <!-- Movement hint for first-time visitors. -->
+  <div id="page-hint" aria-hidden="true"><i class="ri-arrow-up-down-line"></i> scroll or use ↑ ↓ to turn the page</div>
+
+  <!-- ============ MUSIC PLAYER (progressive enhancement; off by default) ============ -->
+  <div id="music-player" role="group" aria-label="Ambient music player" hidden>
+    <button id="music-toggle" type="button" aria-pressed="false" aria-label="Play ambient music" title="Play / pause ambient music">
+      <i class="ri-play-fill" aria-hidden="true"></i>
+    </button>
+    <span id="music-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span id="music-label">ambient</span>
+    <span class="music-vol">
+      <i class="ri-volume-down-line" aria-hidden="true"></i>
+      <input id="music-volume" type="range" min="0" max="100" value="60" step="1"
+             aria-label="Music volume" title="Volume">
+      <i class="ri-volume-up-line" aria-hidden="true"></i>
+    </span>
+  </div>
 
   <!-- ============ SCRIPTS ============ -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/pageturn.js"></script>
+  <script src="assets/js/music.js"></script>
 </body>
 </html>
