@@ -2580,3 +2580,88 @@ main > section {
 @media (prefers-reduced-motion: reduce) {
   #music-player.is-playing #music-eq span { animation: none !important; }
 }
+
+/* =====================================================================
+   Page-turn intro tooltip (one-time, first visit) + now-playing note
+   ===================================================================== */
+
+/* One-time intro card, anchored near the pager on the right. */
+#pageturn-intro {
+  position: fixed; z-index: 70;
+  right: clamp(1rem, 4vw, 3.4rem);
+  top: 50%;
+  width: min(300px, 78vw);
+  transform: translateY(-50%) translateX(16px) scale(.98);
+  opacity: 0; pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease;
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: 14px;
+  border: 2px solid var(--accent);
+  background: rgba(245,239,235,.98);
+  color: var(--ink, #2F4156);
+  box-shadow: 0 16px 48px rgba(47,65,86,.28);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+.dark #pageturn-intro {
+  background: rgba(14,26,43,.98);
+  color: var(--shell, #DCEAF2);
+  box-shadow: 0 16px 48px rgba(0,0,0,.55);
+}
+#pageturn-intro.is-visible { opacity: 1; pointer-events: auto; transform: translateY(-50%) translateX(0) scale(1); }
+
+/* A little pointer arrow aiming at the pager (right edge). */
+#pageturn-intro::after {
+  content: ""; position: absolute; top: 50%; right: -9px;
+  width: 16px; height: 16px; transform: translateY(-50%) rotate(45deg);
+  background: inherit;
+  border-right: 2px solid var(--accent); border-top: 2px solid var(--accent);
+}
+
+#pageturn-intro .pt-intro-title {
+  font-weight: 700; font-size: .98rem; margin: 0 0 .4rem;
+  display: flex; align-items: center; gap: .45rem;
+}
+#pageturn-intro .pt-intro-title i { color: var(--accent); font-size: 1.1rem; }
+#pageturn-intro .pt-intro-body {
+  font-family: 'Inter', sans-serif; font-size: .85rem; line-height: 1.5;
+  margin: 0 0 .9rem; opacity: .9;
+}
+#pageturn-intro .pt-intro-body strong { color: var(--accent); font-weight: 700; }
+
+#pageturn-intro .pt-intro-ok {
+  font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 600; font-size: .82rem;
+  cursor: pointer; border: 0; border-radius: 8px;
+  padding: .5rem 1rem; background: var(--accent); color: var(--on-accent);
+  transition: filter .2s ease, transform .15s ease;
+}
+#pageturn-intro .pt-intro-ok:hover { filter: brightness(1.08); }
+#pageturn-intro .pt-intro-ok:active { transform: scale(.97); }
+
+#pageturn-intro-close {
+  position: absolute; top: .5rem; right: .5rem;
+  width: 1.7rem; height: 1.7rem; display: grid; place-items: center;
+  cursor: pointer; border: 0; border-radius: 50%;
+  background: transparent; color: inherit; opacity: .6;
+  transition: opacity .2s ease, background-color .2s ease;
+}
+#pageturn-intro-close:hover { opacity: 1; background: rgba(127,168,188,.2); }
+#pageturn-intro-close i { font-size: 1.1rem; }
+
+/* The ♪ note prefix that appears in the music label when a real track plays. */
+#music-note { color: var(--accent); font-weight: 700; }
+
+/* On narrow/short screens, drop the intro to the bottom and drop the pointer. */
+@media (max-width: 900px), (max-height: 560px) {
+  #pageturn-intro {
+    top: auto; bottom: clamp(5rem, 14vh, 7rem); right: 50%;
+    transform: translateX(50%) translateY(16px) scale(.98);
+    width: min(320px, 86vw);
+  }
+  #pageturn-intro.is-visible { transform: translateX(50%) translateY(0) scale(1); }
+  #pageturn-intro::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pageturn-intro { transition: opacity .2s ease !important; }
+}

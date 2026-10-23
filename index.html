@@ -695,6 +695,17 @@
   <!-- Movement hint for first-time visitors. -->
   <div id="page-hint" aria-hidden="true"><i class="ri-arrow-up-down-line"></i> scroll or use ↑ ↓ to turn the page</div>
 
+  <!-- Prominent one-time intro tooltip for the page-turn, anchored near the pager.
+       Shown once per visitor (JS gates on localStorage) and dismissable. -->
+  <div id="pageturn-intro" role="dialog" aria-label="New: page-turn navigation" hidden>
+    <button id="pageturn-intro-close" type="button" aria-label="Dismiss">
+      <i class="ri-close-line" aria-hidden="true"></i>
+    </button>
+    <p class="pt-intro-title"><i class="ri-book-open-line" aria-hidden="true"></i> This page turns like a book</p>
+    <p class="pt-intro-body">Scroll, use the <strong>↑ / ↓</strong> keys, or click the page markers on the right to flip between sections.</p>
+    <button id="pageturn-intro-ok" type="button" class="pt-intro-ok">Got it</button>
+  </div>
+
   <!-- ============ MUSIC PLAYER (progressive enhancement; off by default) ============
        To use your OWN music: drop an audio file in the repo at
          assets/audio/track.mp3
@@ -703,12 +714,12 @@
          data-src="assets/audio/my-song.mp3"
        If no file is found, the player falls back to a generated ambient tone.
        (See assets/audio/README.md for details.) -->
-  <div id="music-player" role="group" aria-label="Music player" hidden>
+  <div id="music-player" role="group" aria-label="Music player" data-title="" hidden>
     <button id="music-toggle" type="button" aria-pressed="false" aria-label="Play music" title="Play / pause music">
       <i class="ri-play-fill" aria-hidden="true"></i>
     </button>
     <span id="music-eq" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span id="music-label">music</span>
+    <span id="music-label" aria-live="polite"><span id="music-note" aria-hidden="true"></span><span id="music-title">music</span></span>
     <span class="music-vol">
       <i class="ri-volume-down-line" aria-hidden="true"></i>
       <input id="music-volume" type="range" min="0" max="100" value="60" step="1"

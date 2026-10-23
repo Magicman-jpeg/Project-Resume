@@ -34,6 +34,13 @@ Drop your own audio file here to use it as the site's background music.
   ```html
   data-src="assets/audio/song.mp3, assets/audio/song.ogg"
   ```
+- **Track name ("now playing").** The player shows a name next to the controls.
+  By default it's derived from the filename (e.g. `my-song.mp3` → "My Song").
+  To set it explicitly, add `data-title` on the player element in `index.html`:
+
+  ```html
+  <div id="music-player" ... data-title="My Chill Mix">
+  ```
 - **Format.** `.mp3` is the safest cross-browser choice. `.ogg`/`.m4a` also work
   in most modern browsers.
 - **Size.** Keep it reasonably small (a few MB) so the page stays quick to load.

@@ -41,7 +41,8 @@
 
   const STORE_KEY = 'ambient-music';
   const toggleIcon = toggle.querySelector('i');
-  const label = document.getElementById('music-label');
+  const titleEl = document.getElementById('music-title');
+  const noteEl = document.getElementById('music-note');
 
   // Candidate audio sources: the data-src attribute (comma-separated) wins,
   // otherwise the conventional default path. The first one that loads is used.
@@ -49,6 +50,28 @@
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+
+  // Human-readable track name for the "now playing" label:
+  // use data-title if provided, otherwise derive a tidy name from the filename.
+  function titleFromSrc(src) {
+    const explicit = (player.dataset.title || '').trim();
+    if (explicit) return explicit;
+    try {
+      const file = decodeURIComponent(src.split('/').pop().split('?')[0] || '');
+      const base = file.replace(/\.[a-z0-9]+$/i, '');        // strip extension
+      const words = base.replace(/[_-]+/g, ' ').trim();       // dashes/underscores -> spaces
+      if (!words || /^track$/i.test(words)) return 'Now playing';
+      return words.replace(/\b\w/g, (c) => c.toUpperCase());  // Title Case
+    } catch (_) {
+      return 'Now playing';
+    }
+  }
+
+  // Update the label text (and the little ♪ note icon for a real track).
+  function setLabel(text, isFile) {
+    if (titleEl) titleEl.textContent = text;
+    if (noteEl) noteEl.textContent = isFile ? '♪ ' : '';
+  }
 
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
 
@@ -66,13 +89,20 @@
   // =====================================================================
   let backend = null;
 
+  let isFileTrack = false;
+  let trackTitle = 'music';
+
   probeAudioFile(sources).then((workingSrc) => {
     if (workingSrc) {
       backend = makeFileBackend(workingSrc);
-      if (label) label.textContent = 'music';
+      isFileTrack = true;
+      trackTitle = titleFromSrc(workingSrc);
+      setLabel(trackTitle, true);
     } else if (AudioCtx) {
       backend = makeGeneratedBackend();
-      if (label) label.textContent = 'ambient';
+      isFileTrack = false;
+      trackTitle = 'ambient';
+      setLabel('ambient', false);
     } else {
       // No file and no Web Audio support: hide the player, nothing to play.
       player.hidden = true;
@@ -221,6 +251,8 @@
     toggle.setAttribute('aria-pressed', 'true');
     toggle.setAttribute('aria-label', 'Pause music');
     if (toggleIcon) toggleIcon.className = 'ri-pause-fill';
+    // Show the track name while playing a real file; keep it simple otherwise.
+    setLabel(isFileTrack ? trackTitle : 'playing', isFileTrack);
     saveState();
   }
 
@@ -232,6 +264,7 @@
     toggle.setAttribute('aria-pressed', 'false');
     toggle.setAttribute('aria-label', 'Play music');
     if (toggleIcon) toggleIcon.className = 'ri-play-fill';
+    setLabel(trackTitle, isFileTrack);
     saveState();
   }
 
