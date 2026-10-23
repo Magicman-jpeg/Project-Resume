@@ -2330,3 +2330,227 @@ main > section {
     flex-direction: row;
   }
 }
+
+/* =====================================================================
+   Page-turn navigation (progressive enhancement)
+   ---------------------------------------------------------------------
+   Synthesized from principles, not source code: one-section-at-a-time
+   transitions (Thomas Monavon), a deliberate "turn" gesture with an
+   accessibility-first mindset (Cyd Stumpel), and oversized transition
+   typography used sparingly (Exo Ape). No markup, CSS, or assets from
+   those sites are reproduced here.
+
+   The site remains a normal, scrollable document. These styles only
+   take effect once JS adds `.pageturn-on` to <html>, so the no-JS,
+   reduced-motion, and small-touch experiences stay plain scroll.
+   ===================================================================== */
+
+/* Only engage the paged layout when JS opts in AND motion is allowed. */
+.pageturn-on body { overflow: hidden; }
+.pageturn-on main { height: 100vh; }
+
+/* Each section becomes a full-viewport "page". Document order is kept,
+   so deep links, the skip link, and semantics all continue to work. */
+.pageturn-on main > section,
+.pageturn-on #contact {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* 3D fold origin on the left spine, like a bound page */
+  transform-origin: left center;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Stage gets perspective so the turn reads as a physical page curl. */
+.pageturn-on #page-stage { perspective: 2200px; perspective-origin: 50% 50%; }
+
+/* Page states driven by JS. "Below" the deck = not yet reached;
+   "above" = already turned past. */
+.pageturn-page            { opacity: 0; pointer-events: none; z-index: 1; }
+.pageturn-page.is-current { opacity: 1; pointer-events: auto; z-index: 3;
+  transform: none; }
+.pageturn-page.is-next    { opacity: 0; transform: translateX(8%) scale(.985); z-index: 2; }
+.pageturn-page.is-prev    { opacity: 0; transform: rotateY(-14deg) translateX(-6%); z-index: 2; }
+
+/* The active turn animation. Added/removed by JS; CSS transitions do the work. */
+.pageturn-animating .pageturn-page {
+  transition:
+    transform .72s cubic-bezier(.76,.03,.24,1),
+    opacity   .55s ease;
+}
+
+/* Turning forward: current page curls off to the left like a flipped leaf. */
+.pageturn-page.turn-out-forward {
+  transform: rotateY(-16deg) translateX(-14%) scale(.98);
+  opacity: 0;
+  box-shadow: 40px 0 80px rgba(0,0,0,.35);
+}
+/* Turning backward: the current page slides down/off to the right-front. */
+.pageturn-page.turn-out-backward {
+  transform: rotateY(8deg) translateX(12%) scale(.98);
+  opacity: 0;
+  box-shadow: -40px 0 80px rgba(0,0,0,.35);
+}
+/* Incoming-from-below priming state (forward). */
+.pageturn-page.turn-in-forward-start { transform: translateX(8%) scale(.985); opacity: 0; }
+/* Turning backward: the previous page settles back in from the left. */
+.pageturn-page.turn-in-backward { transform: rotateY(-14deg) translateX(-6%); opacity: 0; }
+
+/* A soft "fold" sheen that sweeps across the page mid-turn. */
+.pageturn-fold {
+  position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(27,181,201,.18) 50%, transparent 62%);
+}
+.dark .pageturn-fold { background: linear-gradient(105deg, transparent 38%, rgba(63,224,240,.22) 50%, transparent 62%); }
+.pageturn-animating .pageturn-fold { animation: fold-sweep .72s ease forwards; }
+@keyframes fold-sweep {
+  0%   { opacity: 0; transform: translateX(-30%); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(30%); }
+}
+
+/* ---- Page indicator / pager (reuses index-plate vocabulary) ---- */
+.pageturn-on #page-pager { display: flex; }
+#page-pager {
+  display: none;
+  position: fixed; z-index: 55; right: clamp(.9rem, 2.5vw, 2rem); top: 50%;
+  transform: translateY(-50%);
+  flex-direction: column; align-items: flex-end; gap: .55rem;
+  font-family: 'Fira Code', ui-monospace, monospace;
+}
+#page-pager .pager-dot {
+  display: flex; align-items: center; gap: .5rem;
+  background: none; border: 0; cursor: pointer; padding: .1rem;
+  color: var(--accent-2); opacity: .55; transition: opacity .25s ease, color .25s ease;
+}
+#page-pager .pager-dot:hover { opacity: .9; }
+#page-pager .pager-dot .pager-label {
+  font-size: .62rem; letter-spacing: .04em; text-transform: uppercase;
+  opacity: 0; transform: translateX(6px); transition: opacity .25s ease, transform .25s ease;
+}
+#page-pager .pager-dot:hover .pager-label,
+#page-pager .pager-dot.is-active .pager-label { opacity: 1; transform: translateX(0); }
+#page-pager .pager-dot .pager-tick {
+  width: 22px; height: 2px; background: currentColor; display: inline-block; transition: width .25s ease;
+}
+#page-pager .pager-dot.is-active { color: var(--accent); opacity: 1; }
+#page-pager .pager-dot.is-active .pager-tick { width: 40px; }
+
+/* Oversized transient page number shown during a turn (Exo-Ape-style scale, original). */
+.pageturn-count {
+  position: fixed; z-index: 58; left: clamp(1rem, 4vw, 4rem); bottom: clamp(1rem, 4vw, 3rem);
+  pointer-events: none; font-family: 'Space Grotesk','Inter',sans-serif; font-weight: 700;
+  font-variant-numeric: tabular-nums; letter-spacing: -.02em; line-height: 1;
+  font-size: clamp(2.5rem, 9vw, 7rem); color: var(--accent);
+  opacity: 0; transition: opacity .4s ease;
+}
+.pageturn-animating .pageturn-count { opacity: .14; }
+
+/* Hint chip: tells the visitor how to move between pages. */
+#page-hint {
+  position: fixed; z-index: 55; left: 50%; bottom: clamp(.8rem, 3vw, 1.6rem);
+  transform: translateX(-50%);
+  font-family: 'Fira Code', ui-monospace, monospace; font-size: .68rem;
+  padding: .35rem .8rem; border-radius: 999px;
+  border: 1px solid var(--accent-2); color: var(--accent-2);
+  background: rgba(14,26,43,.0); display: none; align-items: center; gap: .5rem;
+  opacity: .8; transition: opacity .4s ease;
+}
+.pageturn-on #page-hint { display: inline-flex; }
+#page-hint.is-hidden { opacity: 0; }
+
+/* The paged layout is a desktop/large-screen enhancement. On small touch
+   screens we never engage it (handled in JS), and if any of these states
+   leak in, reduced motion fully disables the fancy transitions. */
+@media (prefers-reduced-motion: reduce) {
+  .pageturn-animating .pageturn-page { transition: opacity .2s ease !important; }
+  .pageturn-page.turn-out-forward,
+  .pageturn-page.turn-in-backward { transform: none !important; }
+  .pageturn-animating .pageturn-fold { animation: none !important; }
+  .pageturn-count { display: none !important; }
+}
+
+/* =====================================================================
+   Ambient music player (progressive enhancement)
+   ---------------------------------------------------------------------
+   A small, accessible floating player. Audio is GENERATED in the browser
+   with the Web Audio API (a soft CRT-era pad), so there is no external
+   audio file, no download, and no licensing concern. It is OFF by default
+   (we never autoplay), and the on/off + volume choice is remembered.
+   ===================================================================== */
+#music-player {
+  position: fixed; z-index: 56; left: clamp(.8rem, 3vw, 1.6rem); bottom: clamp(.8rem, 3vw, 1.6rem);
+  display: flex; align-items: center; gap: .55rem;
+  padding: .4rem .55rem; border-radius: 999px;
+  font-family: 'Fira Code', ui-monospace, monospace;
+  border: 1px solid var(--accent-2);
+  background: rgba(245,239,235,.78); color: var(--ink, #2F4156);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(47,65,86,.18);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.dark #music-player {
+  background: rgba(14,26,43,.72); color: var(--shell, #DCEAF2);
+  box-shadow: 0 6px 26px rgba(0,0,0,.45);
+}
+#music-player.is-playing { border-color: var(--accent); }
+
+/* Play / pause (the on/off control) */
+#music-toggle {
+  width: 2.1rem; height: 2.1rem; flex: 0 0 auto;
+  display: grid; place-items: center; cursor: pointer;
+  border-radius: 50%; border: 1px solid currentColor; background: none; color: inherit;
+  transition: background-color .2s ease, color .2s ease;
+}
+#music-toggle:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+#music-toggle i { font-size: 1.1rem; line-height: 1; }
+
+/* Little animated equalizer bars that pulse while playing */
+#music-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 1rem; width: 1.1rem; }
+#music-eq span {
+  width: 3px; background: var(--accent); border-radius: 1px; height: 30%;
+  transform-origin: bottom;
+}
+#music-player.is-playing #music-eq span { animation: eq-bounce .9s ease-in-out infinite; }
+#music-player.is-playing #music-eq span:nth-child(2) { animation-delay: .15s; }
+#music-player.is-playing #music-eq span:nth-child(3) { animation-delay: .3s; }
+#music-player:not(.is-playing) #music-eq span { height: 30%; opacity: .45; }
+@keyframes eq-bounce {
+  0%, 100% { height: 30%; }
+  50%      { height: 100%; }
+}
+
+/* Volume (up / down) */
+.music-vol { display: inline-flex; align-items: center; gap: .4rem; }
+.music-vol i { font-size: .95rem; opacity: .8; }
+#music-volume {
+  -webkit-appearance: none; appearance: none;
+  width: clamp(60px, 14vw, 96px); height: 4px; border-radius: 999px;
+  background: linear-gradient(to right, var(--accent) var(--vol, 60%), currentColor var(--vol, 60%));
+  cursor: pointer; outline-offset: 3px; opacity: .85;
+}
+#music-volume::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--on-accent); cursor: pointer;
+}
+#music-volume::-moz-range-thumb {
+  width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--on-accent); cursor: pointer;
+}
+#music-label { font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; opacity: .75; white-space: nowrap; }
+
+/* Collapse the text label on very small screens to keep the pill compact. */
+@media (max-width: 480px) {
+  #music-label { display: none; }
+  #music-volume { width: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #music-player.is-playing #music-eq span { animation: none !important; }
+}
