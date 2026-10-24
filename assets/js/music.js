@@ -49,7 +49,11 @@
   const sources = (player.dataset.src || 'assets/audio/track.mp3')
     .split(',')
     .map((s) => s.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((s) => {
+      // Resolve against the document base URL so GitHub Pages subpaths work.
+      try { return new URL(s, document.baseURI).href; } catch (_) { return s; }
+    });
 
   // Human-readable track name for the "now playing" label:
   // use data-title if provided, otherwise derive a tidy name from the filename.
