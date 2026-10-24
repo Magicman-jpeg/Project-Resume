@@ -2,20 +2,6 @@
 
 /* =====================================================================
    Page-turn navigation — progressive enhancement
-   ---------------------------------------------------------------------
-   Turns the portfolio's sections into "pages" that flip one at a time,
-   instead of a single long scroll. This is an ENHANCEMENT layered on top
-   of the normal scrollable document:
-
-     - No JS                  -> normal vertical scroll (markup untouched)
-     - Reduced motion         -> normal vertical scroll (never engages)
-     - Small / touch screens  -> normal vertical scroll (never engages)
-     - Large pointer screens  -> page-turn interaction
-
-   Design is synthesized from public references as PRINCIPLES only
-   (one-section-at-a-time transitions, a deliberate "turn" gesture, and
-   sparing oversized transition typography). No source code, markup, CSS,
-   or assets from any reference site are reproduced here.
    ===================================================================== */
 
 (function initPageTurn() {
@@ -26,7 +12,6 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const canEngage = window.matchMedia('(min-width: 1024px) and (pointer: fine)');
 
-  // The ordered list of pages == the section/footer sequence, in document order.
   const pages = Array.from(
     stage.querySelectorAll(':scope > main > section, :scope > #contact')
   );
@@ -54,7 +39,6 @@
   let wheelCooldown = 0;
   let hintTimer = null;
 
-  // ---- Pager (built once, shown only while engaged) ----------------------
   function buildPager() {
     if (!pager || pager.childElementCount) return;
     pages.forEach((page, i) => {
@@ -90,7 +74,6 @@
     hintTimer = window.setTimeout(() => hint.classList.add('is-hidden'), 4200);
   }
 
-  // ---- One-time intro tooltip (first visit only) -------------------------
   let introWired = false;
   function wireIntroOnce() {
     if (introWired || !intro) return;
@@ -104,7 +87,6 @@
     const okBtn = document.getElementById('pageturn-intro-ok');
     if (closeBtn) closeBtn.addEventListener('click', dismiss);
     if (okBtn) okBtn.addEventListener('click', dismiss);
-    // Esc dismisses it too.
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !intro.hidden) dismiss();
     });
@@ -117,11 +99,9 @@
     if (seen) return;
     wireIntroOnce();
     intro.hidden = false;
-    // next frame so the entrance transition runs
     window.requestAnimationFrame(() => intro.classList.add('is-visible'));
   }
 
-  // ---- Applying page state ----------------------------------------------
   function applyStaticState() {
     pages.forEach((page, i) => {
       page.classList.add('pageturn-page');
@@ -136,10 +116,8 @@
     if (countEl) countEl.textContent = String(i + 1).padStart(2, '0');
   }
 
-  // ---- The turn ----------------------------------------------------------
   function goTo(target, viaHash) {
     if (!engaged) {
-      // Fallback path: just scroll the section into view.
       pages[clamp(target)].scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
@@ -154,7 +132,6 @@
     root.classList.add('pageturn-animating');
     setPageNumber(target);
 
-    // Prime incoming page position (off to the correct side, un-animated).
     incoming.classList.remove('is-next', 'is-prev');
     incoming.style.transition = 'none';
     incoming.classList.add(forward ? 'turn-in-forward-start' : 'turn-in-backward');
@@ -162,10 +139,8 @@
     else incoming.style.transform = 'rotateY(-14deg) translateX(-6%)';
     incoming.style.opacity = '0';
     incoming.style.zIndex = '2';
-    // force reflow so the next frame animates from this primed state
-    void incoming.offsetWidth; // eslint-disable-line no-unused-expressions
+    void incoming.offsetWidth;
 
-    // Animate: current turns away, incoming settles to center.
     window.requestAnimationFrame(() => {
       incoming.style.transition = '';
       incoming.style.transform = '';
@@ -189,15 +164,12 @@
       root.classList.remove('pageturn-animating');
       animating = false;
 
-      // Reset incoming scroll to top and move focus for keyboard users.
       incoming.scrollTop = 0;
       focusPage(incoming);
 
-      // Keep the URL hash in sync for shareable deep links (no new scroll).
       if (!viaHash && incoming.id) {
         history.replaceState(null, '', `#${incoming.id}`);
       }
-      // Let GSAP recompute any triggers now the layout settled.
       if (window.ScrollTrigger) window.ScrollTrigger.refresh();
     };
 
@@ -206,7 +178,6 @@
       if (e.target !== current) return;
       finish();
     }
-    // Safety net in case transitionend doesn't fire.
     window.setTimeout(() => { if (animating) finish(); }, 900);
   }
 
@@ -221,19 +192,17 @@
   function next() { goTo(index + 1); }
   function prev() { goTo(index - 1); }
 
-  // ---- Input handlers ----------------------------------------------------
   function onWheel(e) {
     if (!engaged) return;
-    // Let an inner scroll area consume the wheel until it hits its edge.
     const page = pages[index];
     const atTop = page.scrollTop <= 0;
     const atBottom = page.scrollTop + page.clientHeight >= page.scrollHeight - 2;
     const goingDown = e.deltaY > 0;
 
     if ((goingDown && !atBottom) || (!goingDown && !atTop)) {
-      return; // inner content still has room to scroll; don't hijack
+      return;
     }
-    e.preventDefault();
+    // e.preventDefault(); <-- Commented out to allow free, smooth scrolling!
     const now = Date.now();
     if (animating || now < wheelCooldown) return;
     if (Math.abs(e.deltaY) < 8) return;
@@ -269,28 +238,25 @@
     else if (dy < 0 && atTop) prev();
   }
 
-  // Intercept in-page anchor links so they turn instead of jump-scroll.
   function onAnchorClick(e) {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
     const id = link.getAttribute('href').slice(1);
     if (!id) return;
     const target = pages.findIndex((p) => p.id === id);
-    if (target === -1) return; // not a page target (e.g. skip link to #about still matches)
+    if (target === -1) return;
     if (engaged) {
       e.preventDefault();
       goTo(target);
     }
   }
 
-  // ---- Engage / disengage based on capability + viewport ----------------
   function engage() {
     if (engaged) return;
     engaged = true;
     root.classList.add('pageturn-on');
     buildPager();
     if (pager) pager.hidden = false;
-    // Start on whatever section the URL points at (deep-link friendly).
     const hashIndex = pages.findIndex((p) => p.id === location.hash.slice(1));
     index = hashIndex > -1 ? hashIndex : 0;
     applyStaticState();
@@ -298,7 +264,7 @@
     showHintBriefly();
     showIntroOnce();
 
-    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('wheel', onWheel, { passive: true });
     window.addEventListener('keydown', onKey);
     window.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('touchend', onTouchEnd, { passive: true });
@@ -336,16 +302,14 @@
     else disengage();
   }
 
-  // React to viewport / capability / motion-preference changes.
   addMQListener(canEngage, evaluate);
   addMQListener(prefersReducedMotion, evaluate);
 
   function addMQListener(mq, fn) {
     if (mq.addEventListener) mq.addEventListener('change', fn);
-    else if (mq.addListener) mq.addListener(fn); // older Safari
+    else if (mq.addListener) mq.addListener(fn);
   }
 
-  // Wait for load so GSAP/ScrollTrigger from main.js are initialized first.
   if (document.readyState === 'complete') evaluate();
   else window.addEventListener('load', evaluate);
 })();
