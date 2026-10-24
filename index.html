@@ -13,13 +13,13 @@
   <meta property="og:description" content="BS Information Technology student at PUP, aspiring Cloud Solutions Architect. AWS, Python, Java, and community leadership.">
   <meta property="og:url" content="https://magicman-jpeg.github.io/Resume-Project-beta/">
 
-  <!-- Favicon: embedded SVG terminal tile, matches the ~/JC.md identity (no binary asset needed) -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1A2B'/%3E%3Ctext x='7' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%233FE0F0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
 
   <!-- Standalone site stylesheet -->
   <link href="assets/css/styles.css" rel="stylesheet">
 
-  <!-- Fonts: Fraunces (display) + Space Grotesk (headings) + Inter (body) + Fira Code (mono) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -27,14 +27,13 @@
   <!-- Remixicon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 
-  <!-- GSAP for scroll + hover motion (CDN, no build step) -->
+  <!-- GSAP -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body class="grain bg-paper text-ink dark:bg-espresso dark:text-shell antialiased transition-colors duration-300">
 
-  <!-- Skip link -->
   <a href="#about" class="sr-only focus:not-sr-only focus:btn-accent focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
 
   <!-- ============ NAVBAR ============ -->
@@ -78,32 +77,27 @@
     </div>
   </header>
 
-  <!-- Page-turn stage: wraps the paged content so JS can apply 3D perspective.
-       Without JS this is an ordinary block and the site scrolls normally. -->
   <div id="page-stage">
   <main class="relative z-10">
-    <!-- ============ HERO — asymmetric, big type, offset Y2K panel ============ -->
+    <!-- ============ HERO ============ -->
     <section id="hero" class="relative pt-28 pb-20 sm:pt-32 sm:pb-24 grid-bg overflow-hidden">
       <div class="aurora" aria-hidden="true"></div>
       <pre aria-hidden="true" class="ascii-corner hidden sm:block top-20 right-4">  ┌─┐·░▒▓
   ┤ ├─┐
   └─┘ │·▒░
  ·░▒ └──┐
-      │·▒
+     │·▒
  ▓▒░──┘</pre>
 
       <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
-        <!-- top meta line -->
         <div class="reveal flex items-center justify-between font-mono text-xs sm:text-sm text-atomic-teal dark:text-atomic-teal-bright mb-6">
           <span>PORTFOLIO / <time data-current-year datetime="2026">2026</time></span>
           <span class="text-ink/75 dark:text-shell/60">Quezon City, PH</span>
         </div>
 
-        <!-- Animated ASCII wave banner (JS-driven; static fallback for reduced motion) -->
         <pre id="ascii-wave" aria-hidden="true" class="ascii ascii-wave reveal mb-10 opacity-80 w-full max-w-full"></pre>
 
         <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 items-end">
-          <!-- Name — huge, baseline left -->
           <div class="lg:col-span-8">
             <pre aria-hidden="true" class="font-mono text-atomic-orange leading-none mb-5 animate-fade-up select-none text-[clamp(0.3rem,1.5vw,0.7rem)] overflow-hidden">     ██╗ ██████╗
      ██║██╔════╝
@@ -133,7 +127,6 @@
             </div>
           </div>
 
-          <!-- Offset Y2K panel + starburst, lower-right -->
           <div class="lg:col-span-4 relative">
             <div class="absolute -top-24 -right-4 w-32 h-32 sm:w-44 sm:h-44 animate-spin-slow pointer-events-none" aria-hidden="true">
               <div class="starburst"></div>
@@ -156,16 +149,33 @@
       </div>
     </section>
 
-    <!-- ============ No. 01 — ABOUT (editorial two-column, espresso-tinted band) ============ -->
-    <section id="about" class="py-24 bg-ink/5 dark:bg-black/20 border-t-2 border-ink/15 dark:border-shell/15">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <!-- ============ No. 01 — ABOUT ============ -->
+    <section id="about" class="relative py-24 bg-ink/5 dark:bg-black/20 border-t-2 border-ink/15 dark:border-shell/15 overflow-hidden">
+      <!-- ARTWORK 1 MOVED HERE -->
+      <div class="ascii-art-panel ascii-art-panel--portrait absolute right-4 top-10 pointer-events-none opacity-20" aria-hidden="true">
+        <pre class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⡿⢿⣿⣛⣟⣿⡿⢿⢿⣷⣦⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣯⣷⣿⣿⣿⢟⠃⢿⣟⣿⣿⣾⣷⣽⣺⢆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⣿⢿⣾⢧⣏⡴⠀⠈⢿⣘⣿⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢹⣿⢠⡶⠒⢶⠀⠀⣠⠒⠒⠢⡀⢿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⠸⣄⣠⡾⠀⠀⠻⣀⣀⡼⠁⢸⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⣿⣿⠀⠀⠀⡔⠢⠤⠔⠒⢄⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣄⠀⠸⡀⠀⠀⠀⠀⢀⡇⠠⣸⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣦⣮⣉⢉⠉⠩⠄⢴⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⢻⣿⣟⢟⡁⠀⠀⠀⠀⢇⠻⣿⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⠿⣿⡈⠋⠀⠀⡇⠀⠀⠀⢰⠃⢠⣿⡟⣿⣿⢻⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠸⡆⠛⠇⢀⡀⠀⡇⠀⠀⡞⠀⠀⣸⠟⡊⠁⠚⠌⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡍⠨⠊⣒⠴⠀⡇⡴⠋⡋⢐⠐⠅⡀⠐⢠⠕⠂⢂⠀⠀⠀</pre>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
           <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">01</div>
           <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Who I Am</h2>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-10 items-start">
-          <!-- Left: editorial pull-quote intro -->
           <div class="lg:col-span-7 reveal">
             <p class="font-display text-2xl sm:text-3xl leading-snug mb-6">
               I build cloud-powered applications and systems — from AWS chatbots to C-based banking
@@ -186,7 +196,6 @@
             </div>
           </div>
 
-          <!-- Right: fact-sheet rail (plate framed) -->
           <div class="lg:col-span-5 reveal">
             <div class="plate p-6" style="--tick:#1BB5C9">
               <p class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright mb-5">FACT SHEET</p>
@@ -215,15 +224,51 @@
       </div>
     </section>
 
-    <!-- ============ No. 02 — SKILLS (spec-sheet, paper band) ============ -->
-    <section id="skills" class="py-24 border-t-2 border-ink/15 dark:border-shell/15">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <!-- ============ No. 02 — SKILLS ============ -->
+    <section id="skills" class="relative py-24 border-t-2 border-ink/15 dark:border-shell/15 overflow-hidden">
+      <!-- ARTWORK 2 MOVED HERE -->
+      <div class="ascii-art-panel ascii-art-panel--wide absolute right-4 top-10 pointer-events-none opacity-20" aria-hidden="true">
+        <pre class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡤⠶⠶⠒⠒⠒⠒⠲⠶⠦⢤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠈⠉⠓⠶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⡾⠋⠁⠀⣀⡀⠀⠀⢀⣴⡶⠀⡀⣠⡆⠀⠀⠀⢀⠀⠀⠀⠀⠀⠙⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⠞⠋⠁⠀⣰⡾⢋⡀⠀⠀⣰⡟⠀⠀⣤⣿⡿⠁⢈⣶⠏⢻⡌⠐⠁⢸⣆⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⠀⠀⠀⠀⣼⠟⢠⡿⠇⠂⣴⡟⣀⣀⡾⢋⣾⠁⣠⡿⠁⠀⠈⢷⡐⢂⢸⡿⣆⠀⠀⢿⡄⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⡞⠃⠀⠀⠀⠀⠀⣼⠏⢠⡿⢁⣤⣶⣿⢟⣻⠟⠙⣻⣿⣾⠏⠀⠀⠀⠀⠈⣷⣘⣘⣧⠹⣖⠀⠸⣷⠀⠀⠀⠀⠸⣆⣠⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⡼⠋⠀⠀⠀⠀⠀⠀⣼⠏⢀⣿⡃⠛⣽⢿⣯⣿⣿⣶⣦⣿⣾⠋⠀⠀⠀⠀⠀⠀⠘⢿⡻⣿⠛⠻⣷⣤⣿⡄⠀⢀⡀⠀⢹⡇⠀⠀⠈⠙⠳⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⡞⠁⠀⠀⠀⠀⠀⠀⣸⡿⣸⣿⡿⠂⣾⣯⣾⣿⡷⠋⠙⣿⣿⣿⡦⠀⠀⠀⠀⠀⠀⣀⣼⣷⣿⣦⣤⣹⣏⢻⣷⣤⢈⣿⠀⠈⣿⠀⠀⠀⠀⠀⠈⢳⣄⠀⠀⠀⠀
+⠀⠀⢠⡟⠀⠀⠀⠀⠁⠀⠀⠀⣿⣿⡿⢻⣇⣾⢳⡟⠀⣾⣿⣦⣴⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⣻⠟⠉⢻⣿⣿⣿⢿⣾⡿⣿⢿⣿⡆⠄⣿⡂⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀
+⠀⢀⡿⠀⠀⡀⠀⠀⠀⠀⠀⢈⣿⣿⣵⢻⣿⠇⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⢀⣿⣧⣤⣼⣿⣿⣿⡇⠿⣧⢻⣄⣿⡇⠀⣿⠇⢈⠀⠀⠀⠀⠀⠀⢹⡆⠀⠀
+⠀⣾⠁⠀⠁⠀⠀⠀⢀⣠⠾⠋⠀⣿⠿⠸⣿⠀⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⢻⡈⣿⣿⠷⣤⣿⠁⠀⠀⠀⠁⠂⠀⠀⠀⢿⠀⠀
+⢠⡇⠀⠀⢀⣠⡴⠞⠋⠁⠀⠀⠀⢹⡀⢀⡇⠀⠀⠀⠈⢻⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⣸⠇⢸⣿⣤⠘⡟⣧⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠀
+⠈⠛⠖⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠻⣼⠃⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⠟⠀⠰⠟⠀⣠⢻⢼⢡⠇⠘⢧⡀⠀⠀⠀⠂⠀⠀⠀⢿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠋⠁⠀⠀⠀⠀⢠⣏⡟⠀⡾⠀⠀⠈⢳⣄⠀⠀⠀⠀⠀⠀⢸⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡖⠲⠶⠤⠤⠤⢤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣠⡾⠁⠀⠀⠀⠀⠙⢷⡄⠀⠀⠀⠀⢸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢧⡀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠓⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⠀⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣄⡀⠀⠀⠀⠀⠸⣇⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⣸⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣤⣀⠀⠀⠙⠳⠦⡤⠶⠋⠀⠀⠀⠀⠀⢀⣠⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠓⠶⣤⠄⢠⣤⣀⣤⣤⠤⠶⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡖⢻⡇⠀⣼⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡛⣿⣿⣟⣿⣷⣾⠿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⡇⠈⢻⣿⣟⠉⠁⣲⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡷⣿⠀⠀⢸⣿⠃⠀⠀⢺⠶⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⢿⡏⠀⠀⢸⢿⡆⠐⠀⢸⣿⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⣾⠃⠀⠀⠻⠘⠇⠀⠀⢸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠑⣿⣿⣶⣤⣶⣶⣶⣶⣶⡞⢸⡞⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⠴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⠿⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡇⠀⢻⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣄⣠⡇⠀⢸⡄⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢹⠁⠀⠈⡏⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣷⣾⠀⠀⠀⣷⠾⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠿⠛⠋⠀⠀⠀⠻⢤⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
           <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">02</div>
           <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Technical Toolkit</h2>
         </div>
 
-        <!-- Spec sheet: label on the left, chips on the right -->
         <div class="reveal">
           <div class="spec-row">
             <div class="font-grotesk font-semibold flex items-center gap-2"><i class="ri-code-s-slash-line text-atomic-orange"></i> Languages</div>
@@ -272,7 +317,7 @@
       </div>
     </section>
 
-    <!-- ============ No. 03 — EXPERIENCE (timeline, gold-tinted band) ============ -->
+    <!-- ============ No. 03 — EXPERIENCE ============ -->
     <section id="experience" class="py-24 bg-atomic-gold/10 dark:bg-atomic-gold/5 border-t-2 border-ink/15 dark:border-shell/15">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
@@ -322,20 +367,61 @@
       </div>
     </section>
 
-    <!-- ============ No. 04 — PROJECTS (asymmetric) + LEADERSHIP band (paper) ============ -->
+    <!-- ============ No. 04 — PROJECTS ============ -->
     <section id="projects" class="relative overflow-hidden py-24 border-t-2 border-ink/15 dark:border-shell/15">
-      <pre aria-hidden="true" class="ascii-corner hidden sm:block bottom-10 left-2">▓▒░·
-│ ┌──┐
-└─┤  ├·░▒
-  └──┘
- ·▒░ ▓</pre>
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <!-- ARTWORK 3 MOVED HERE -->
+      <div class="ascii-art-panel ascii-art-panel--feature absolute right-4 top-10 pointer-events-none opacity-20" aria-hidden="true">
+        <pre class="ascii-art">⠀⠀⠤⠔⢆⣀⡠⠤⠴⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠃⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⠀
+⠄⠀⠀⠀⠀⠀⠀⠀⠀⣘⡄⠀⠀⠀⠀⡄⠀⠀⠀⢸⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⢴⣊⣉⣉⡀⠀⠀⠀⠀⠀⡇⠀⠀⠀⡆⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀
+⠀⠀⠄⠀⠀⠀⠀⠀⠀⠈⠓⢄⠀⠀⠀⠇⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀
+⠀⠀⠀⠀⠀⠰⣩⠃⠀⣀⠀⠀⢳⠀⢠⠂⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
+⠀⠀⡜⢹⣀⡀⠀⠀⡜⠀⡇⠀⠀⡇⠘⠒⢢⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⡇⠀⡰⠁⠀⡜⠀⣠⠃⠀⠀⡇⣠⢖⣾⣿⣿⣿⣿⣿⣿⣿⣿⣹⣿⣿⣿⡟⡞⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠈⠉⠀⢀⠞⠀⠹⡀⠀⢀⠜⠀⢇⣾⣿⣿⣿⣿⣿⣿⣿⣿⢏⣿⣿⣿⡟⢰⠃⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⢄⡀⠀⣠⠊⠀⠀⠀⠱⠖⠁⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⠏⢸⣿⣿⡏⠁⡼⠀⠀⠀⢿⣿⣿⣿⣿⣧⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠏⠀⣼⣿⣿⠁⠀⡇⠀⠀⠀⢸⣿⣿⣿⣿⣿⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⡿⠙⢢⣿⡿⣿⠀⠀⠃⠀⠀⠀⠈⣿⡿⣿⣿⣿⡇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣷⣺⣽⣿⣿⣿⣄⡀⡀⠀⠀⠀⠀⢻⣷⠹⣿⣿⣧⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡿⣿⣿⠟⢉⣴⣾⣿⣯⠁⠇⠀⠀⠀⠀⢀⣿⣇⣙⣿⣿⣤⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⢣⡿⠁⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠘⣿Disp⢋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣸⠇⠀⣼⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣽⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡿⣿⠀⠀⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⣿⠀⢸⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠻⡀⢘⠉⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠙⠺⠿⠿⠿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠊⢃⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⣶⣿⣿⣿⣿⣿⣿⠇⢀⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣿⣿⠃⢠⣾⣿⣿⣿⣿⣿⣿⣿⡟⡆⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⡌⠉⠉⠉⢸⣿⣿⣿⣿⣿⣿⣿⠃⠃⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠙⣿⣶⠶⠖⠒⠂⢻⣦⠀⠀⠀⠀⠀⠁⠀⠁⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡟⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿⡿⣿⣿⣦⡀⠀⠀⠀⢰⡟⠁⠀⠀⠀⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⠃⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣿⣿⣿⡇⠀⠀⠘⢿⣿⣿⣷⣄⠀⢸⡆⠀⠀⠀⠀⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠋⠉⢻⣿⣇⠀⠀⠀⠘⣿⣿⣿⣿⣿⣦⣧⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⣤⣽⣿⣦⣄⡀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣀⣼⣧⣤⣴⣶⣿⠟⠛⢩⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⢠⡾⠋⠀⢀⣤⡶⠟⠋⠉⠀⠉⢿⣆⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+⠀⠀⠀⠀⠀⣰⣟⡥⠤⠰⠛⠉⠀⠀⠀⠀⣀⣠⣼⣿⣼⣿⣿⣿⠟⠛⠛⢉⣩⣵⡾⣿⡏⠁⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀
+⠀⠀⠀⠀⢠⡿⠋⠀⠀⠀⠀⢀⣀⣠⠴⠚⠉⠀⠈⠉⠻⣿⣯⠀⠀⢠⣶⠟⠋⠁⠀⠇⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀
+⠀⠀⠀⠀⢸⡀⠀⠀⣠⠴⠚⠋⠁⠀⣀⠀⣀⣀⣠⣤⣤⣿⣿⣧⠀⢸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
+⠀⠀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠘⠋⠉⠉⠉⠀⠀⠀⠀⠀⠹⣿⣿⠿⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
+⠀⠀⠀⠀⢀⣴⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⡄⣿⢿⣔⠤⣀⠈⠉⠻⢦⣄⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⣾⡿⠏⠻⢿⣶⣶⣦⣄⠀⠀⠀⠀⠘⠋⠠⠿⢿⣿⣾⡏⢿⣦⢄⡉⠒⠤⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠉⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀
+⠀⠀⠀⣼⡟⠀⠀⢠⡄⡈⣻⣿⢷⣯⣉⠓⢤⡀⠀⠀⠀⠀⠈⠙⠻⣶⣿⣧⠈⢓⣾⣿⡿⣫⣿⡿⠋⣼⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀
+⠀⠀⣰⡟⠀⠀⠀⠈⣧⠱⡄⢙⣧⣺⣿⣷⣦⡹⡦⡀⠀⠀⠀⠀⠀⠀⠹⢿⣷⣿⣿⢋⡼⠟⠋⢀⣾⣿⡿⠟⣝⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣧⣄⠀⠀⠀
+⠀⢠⡟⠀⠀⠀⠀⠀⣇⣧⣹⢻⡟⠋⠛⣻⣿⣿⠾⢮⣄⠀⠀⠀⠀⠀⠀⣼⡿⡟⡇⡀⠀⠀⢀⡾⠟⠉⣠⢾⠟⠁⠀⠀⠀⠀⠀⢀⣀⠤⣴⣾⣿⣿⣿⠃⣿⡿⣿⣿⣄⠙⢿⣦⠀
+⠀⣾⠁⠀⠀⠀⠀⢀⣿⡪⡿⣿⣀⢀⣤⣽⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡃⠧⡸⣣⠰⡀⠀⠀⠀⠀⠉⠁⢀⣀⠠⠤⠒⠒⠉⣁⣤⣾⣿⣿⣿⣋⣭⣿⣯⠾⢷⣿⣿⣷⡌⢏⠀
+⢸⡃⠀⠀⠀⠀⠀⢀⡿⣻⡿⢣⡈⠓⢌⡛⢿⣄⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣼⡀⢣⢫⢆⢣⣠⡤⡔⠒⠊⣉⣀⠤⠤⠒⠒⢉⣉⣠⣭⣿⡾⠿⠟⠛⠉⠁⠀⠀⠀⠈⠳⣌⣿⡌⢧
+⣟⡇⠀⠀⠀⠀⠀⢸⣷⡿⠁⠀⠈⠒⢄⡉⠢⣌⠻⢶⣤⣀⡀⠀⣾⣟⡙⠛⣿⣷⣬⣞⣟⣇⢧⢷⠓⣈⣉⣤⣤⠤⠶⠒⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⡌
+⣿⡇⣤⣤⣀⠀⠀⢨⡟⠁⠀⠀⠀⠀⠀⠉⠢⣄⠙⠢⢌⣚⢭⣛⠾⠿⠿⠿⠉⣿⣿⣿⣛⣬⣶⢿⠻⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡧
+⠿⠃⠀⠉⠛⢷⣦⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢝⡫⠖⣬⣙⠲⢤⣤⣾⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻
+⠀⠀⠀⠀⠀⣰⠏⠙⠣⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠋⢛⡷⢤⣛⣧⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠊⢎⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-12">
           <div class="lg:col-span-1 index-plate text-5xl sm:text-6xl text-atomic-orange">04</div>
           <h2 class="lg:col-span-11 heading-grotesk text-5xl sm:text-7xl">Featured Projects</h2>
         </div>
 
-        <!-- Featured full-width plate -->
         <article class="tilt reveal group flex flex-col lg:flex-row gap-6 plate p-6 sm:p-8 bg-paper dark:bg-espresso mb-6">
           <div class="lg:w-1/2">
             <div class="flex items-center gap-3 mb-4">
@@ -363,9 +449,7 @@
           </div>
         </article>
 
-        <!-- Secondary projects: offset 2-up -->
         <div class="grid sm:grid-cols-2 gap-6">
-          <!-- Hospital Capacity Management System -->
           <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
             <div class="flex items-center mb-4">
               <i class="ri-hospital-line text-3xl text-atomic-teal dark:text-atomic-teal-bright"></i>
@@ -381,7 +465,6 @@
             </div>
           </article>
 
-          <!-- BankerBot -->
           <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
             <div class="flex items-center mb-4">
               <i class="ri-robot-2-line text-3xl text-atomic-orange"></i>
@@ -396,7 +479,6 @@
             </div>
           </article>
 
-          <!-- C Bank Account Simulation -->
           <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
             <div class="flex items-center mb-4">
               <i class="ri-bank-line text-3xl text-atomic-teal dark:text-atomic-teal-bright"></i>
@@ -410,7 +492,6 @@
             </div>
           </article>
 
-          <!-- 2048 Game Clone -->
           <article class="tilt reveal group flex flex-col plate p-6 bg-paper dark:bg-espresso">
             <div class="flex items-center mb-4">
               <i class="ri-gamepad-line text-3xl text-atomic-orange"></i>
@@ -426,7 +507,6 @@
           </article>
         </div>
 
-        <!-- Leadership folded in as a slim band -->
         <div class="reveal mt-10">
           <div class="flex items-center gap-3 mb-5">
             <span class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright">COMMUNITY</span>
@@ -457,7 +537,6 @@
           </div>
         </div>
 
-        <!-- Also involved with — full org list, grouped by year -->
         <div class="reveal mt-10">
           <div class="flex items-center gap-3 mb-6">
             <span class="font-mono text-xs text-atomic-teal dark:text-atomic-teal-bright">ALSO INVOLVED WITH</span>
@@ -465,7 +544,6 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-x-10 gap-y-8">
-            <!-- 2025 -->
             <div>
               <p class="index-plate text-atomic-orange text-2xl mb-4">2025</p>
               <ul class="space-y-3 text-sm">
@@ -483,7 +561,6 @@
               </ul>
             </div>
 
-            <!-- 2026 -->
             <div>
               <p class="index-plate text-atomic-orange text-2xl mb-4">2026</p>
               <ul class="space-y-3 text-sm">
@@ -499,7 +576,7 @@
       </div>
     </section>
 
-    <!-- ============ No. 05 — PROFESSIONAL SUMMARY ============ -->
+    <!-- ============ No. 05 — SUMMARY ============ -->
     <section id="summary" class="py-24 bg-ink/5 dark:bg-black/20 border-t-2 border-ink/15 dark:border-shell/15">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="reveal grid lg:grid-cols-12 gap-6 items-baseline mb-10">
@@ -527,116 +604,9 @@
         </div>
       </div>
     </section>
-
-    <!-- Page-wide ASCII artwork layer; decorative and intentionally behind content. -->
-    <div id="ascii-art-background" class="ascii-art-background" aria-hidden="true">
-      <div class="ascii-art-field">
-          <!-- Artwork 1 -->
-          <div class="ascii-art-panel ascii-art-panel--portrait">
-            <pre class="ascii-art" aria-hidden="true">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⡿⢿⣿⣛⣟⣿⡿⢿⢿⣷⣦⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢰⣯⣷⣿⣿⣿⢟⠃⢿⣟⣿⣿⣾⣷⣽⣺⢆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢸⣿⢿⣾⢧⣏⡴⠀⠈⢿⣘⣿⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢹⣿⢠⡶⠒⢶⠀⠀⣠⠒⠒⠢⡀⢿⣿⣿⣿⡇⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣿⣿⠸⣄⣠⡾⠀⠀⠻⣀⣀⡼⠁⢸⣿⣿⣿⣿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⢰⣿⣿⠀⠀⠀⡔⠢⠤⠔⠒⢄⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⢸⣿⣿⣄⠀⠸⡀⠀⠀⠀⠀⢀⡇⠠⣸⣿⣿⣿⣿⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣦⣮⣉⢉⠉⠩⠄⢴⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢸⣿⣿⢻⣿⣟⢟⡁⠀⠀⠀⠀⢇⠻⣿⣿⣿⣿⣿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢸⠿⣿⡈⠋⠀⠀⡇⠀⠀⠀⢰⠃⢠⣿⡟⣿⣿⢻⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠸⡆⠛⠇⢀⡀⠀⡇⠀⠀⡞⠀⠀⣸⠟⡊⠁⠚⠌⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⡍⠨⠊⣒⠴⠀⡇⡴⠋⡋⢐⠐⠅⡀⠐⢠⠕⠂⢂⠀⠀⠀</pre>
-          </div>
-
-          <!-- Artwork 2 -->
-          <div class="ascii-art-panel ascii-art-panel--wide">
-            <pre class="ascii-art" aria-hidden="true">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡤⠶⠶⠒⠒⠒⠒⠲⠶⠦⢤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠈⠉⠓⠶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⡾⠋⠁⠀⣀⡀⠀⠀⢀⣴⡶⠀⡀⣠⡆⠀⠀⠀⢀⠀⠀⠀⠀⠀⠙⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⠞⠋⠁⠀⣰⡾⢋⡀⠀⠀⣰⡟⠀⠀⣤⣿⡿⠁⢈⣶⠏⢻⡌⠐⠁⢸⣆⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⠀⠀⠀⠀⣼⠟⢠⡿⠇⠂⣴⡟⣀⣀⡾⢋⣾⠁⣠⡿⠁⠀⠈⢷⡐⢂⢸⡿⣆⠀⠀⢿⡄⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣠⡞⠃⠀⠀⠀⠀⠀⣼⠏⢠⡿⢁⣤⣶⣿⢟⣻⠟⠙⣻⣿⣾⠏⠀⠀⠀⠀⠈⣷⣘⣘⣧⠹⣖⠀⠸⣷⠀⠀⠀⠀⠸⣆⣠⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⡼⠋⠀⠀⠀⠀⠀⠀⣼⠏⢀⣿⡃⠛⣽⢿⣯⣿⣿⣶⣦⣿⣾⠋⠀⠀⠀⠀⠀⠀⠘⢿⡻⣿⠛⠻⣷⣤⣿⡄⠀⢀⡀⠀⢹⡇⠀⠀⠈⠙⠳⣦⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⡞⠁⠀⠀⠀⠀⠀⠀⣸⡿⣸⣿⡿⠂⣾⣯⣾⣿⡷⠋⠙⣿⣿⣿⡦⠀⠀⠀⠀⠀⠀⣀⣼⣷⣿⣦⣤⣹⣏⢻⣷⣤⢈⣿⠀⠈⣿⠀⠀⠀⠀⠀⠈⢳⣄⠀⠀⠀⠀
-⠀⠀⢠⡟⠀⠀⠀⠀⠁⠀⠀⠀⣿⣿⡿⢻⣇⣾⢳⡟⠀⣾⣿⣦⣴⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⣻⠟⠉⢻⣿⣿⣿⢿⣾⡿⣿⢿⣿⡆⠄⣿⡂⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀
-⠀⢀⡿⠀⠀⡀⠀⠀⠀⠀⠀⢈⣿⣿⣵⢻⣿⠇⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⢀⣿⣧⣤⣼⣿⣿⣿⡇⠿⣧⢻⣄⣿⡇⠀⣿⠇⢈⠀⠀⠀⠀⠀⠀⢹⡆⠀⠀
-⠀⣾⠁⠀⠁⠀⠀⠀⢀⣠⠾⠋⠀⣿⠿⠸⣿⠀⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⢻⡈⣿⣿⠷⣤⣿⠁⠀⠀⠀⠁⠂⠀⠀⠀⢿⠀⠀
-⢠⡇⠀⠀⢀⣠⡴⠞⠋⠁⠀⠀⠀⢹⡀⢀⡇⠀⠀⠀⠈⢻⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⣸⠇⢸⣿⣤⠘⡟⣧⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠀
-⠈⠛⠖⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠻⣼⠃⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⠟⠀⠰⠟⠀⣠⢻⢼⢡⠇⠘⢧⡀⠀⠀⠀⠂⠀⠀⠀⢿⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠋⠁⠀⠀⠀⠀⢠⣏⡟⠀⡾⠀⠀⠈⢳⣄⠀⠀⠀⠀⠀⠀⢸⡄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡖⠲⠶⠤⠤⠤⢤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣠⡾⠁⠀⠀⠀⠀⠙⢷⡄⠀⠀⠀⠀⢸⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢧⡀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠓⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⠀⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣄⡀⠀⠀⠀⠀⠸⣇⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⣸⠇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣤⣀⠀⠀⠙⠳⠦⡤⠶⠋⠀⠀⠀⠀⠀⢀⣠⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠓⠶⣤⠄⢠⣤⣀⣤⣤⠤⠶⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡖⢻⡇⠀⣼⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡛⣿⣿⣟⣿⣷⣾⠿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⡇⠈⢻⣿⣟⠉⠁⣲⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡷⣿⠀⠀⢸⣿⠃⠀⠀⢺⠶⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⢿⡏⠀⠀⢸⢿⡆⠐⠀⢸⣿⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⣾⠃⠀⠀⠻⠘⠇⠀⠀⢸⢻⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠑⣿⣿⣶⣤⣶⣶⣶⣶⣶⡞⢸⡞⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⠴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⠿⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⡇⠀⢻⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣄⣠⡇⠀⢸⡄⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢹⠁⠀⠈⡏⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣷⣾⠀⠀⠀⣷⠾⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠿⠛⠋⠀⠀⠀⠻⢤⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
-          </div>
-
-          <!-- Artwork 3 -->
-          <div class="ascii-art-panel ascii-art-panel--feature">
-            <pre class="ascii-art" aria-hidden="true">⠀⠀⠤⠔⢆⣀⡠⠤⠴⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠃⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⠀
-⠄⠀⠀⠀⠀⠀⠀⠀⠀⣘⡄⠀⠀⠀⠀⡄⠀⠀⠀⢸⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀
-⠀⠀⠀⠀⠀⢴⣊⣉⣉⡀⠀⠀⠀⠀⠀⡇⠀⠀⠀⡆⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀
-⠀⠀⠄⠀⠀⠀⠀⠀⠀⠈⠓⢄⠀⠀⠀⠇⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀
-⠀⠀⠀⠀⠀⠰⣩⠃⠀⣀⠀⠀⢳⠀⢠⠂⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
-⠀⠀⡜⢹⣀⡀⠀⠀⡜⠀⡇⠀⠀⡇⠘⠒⢢⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⡇⠀⡰⠁⠀⡜⠀⣠⠃⠀⠀⡇⣠⢖⣾⣿⣿⣿⣿⣿⣿⣿⣿⣹⣿⣿⣿⡟⡞⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠈⠉⠀⢀⠞⠀⠹⡀⠀⢀⠜⠀⢇⣾⣿⣿⣿⣿⣿⣿⣿⣿⢏⣿⣿⣿⡟⢰⠃⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⢄⡀⠀⣠⠊⠀⠀⠀⠱⠖⠁⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⠏⢸⣿⣿⡏⠁⡼⠀⠀⠀⢿⣿⣿⣿⣿⣧⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠏⠀⣼⣿⣿⠁⠀⡇⠀⠀⠀⢸⣿⣿⣿⣿⣿⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⡿⠙⢢⣿⡿⣿⠀⠀⠃⠀⠀⠀⠈⣿⡿⣿⣿⣿⡇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣷⣺⣽⣿⣿⣿⣄⡀⡀⠀⠀⠀⠀⢻⣷⠹⣿⣿⣧⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡿⣿⣿⠟⢉⣴⣾⣿⣯⠁⠇⠀⠀⠀⠀⢀⣿⣇⣙⣿⣿⣤⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⢣⡿⠁⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠘⣿⢋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣸⠇⠀⣼⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣽⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡿⣿⠀⠀⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⣿⠀⢸⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠻⡀⢘⠉⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠙⠺⠿⠿⠿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡇⠊⢃⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⣶⣿⣿⣿⣿⣿⣿⠇⢀⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣿⣿⠃⢠⣾⣿⣿⣿⣿⣿⣿⣿⡟⡆⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⡌⠉⠉⠉⢸⣿⣿⣿⣿⣿⣿⣿⠃⠃⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠙⣿⣶⠶⠖⠒⠂⢻⣦⠀⠀⠀⠀⠀⠁⠀⠁⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡟⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿⡿⣿⣿⣦⡀⠀⠀⠀⢰⡟⠁⠀⠀⠀⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⠃⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣿⣿⣿⡇⠀⠀⠘⢿⣿⣿⣷⣄⠀⢸⡆⠀⠀⠀⠀⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠋⠉⢻⣿⣇⠀⠀⠀⠘⣿⣿⣿⣿⣿⣦⣧⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⣤⣽⣿⣦⣄⡀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣀⣼⣧⣤⣴⣶⣿⠟⠛⢩⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
-⠀⠀⠀⠀⠀⠀⢠⡾⠋⠀⢀⣤⡶⠟⠋⠉⠀⠉⢿⣆⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
-⠀⠀⠀⠀⠀⣰⣟⡥⠤⠰⠛⠉⠀⠀⠀⠀⣀⣠⣼⣿⣼⣿⣿⣿⠟⠛⠛⢉⣩⣵⡾⣿⡏⠁⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀
-⠀⠀⠀⠀⢠⡿⠋⠀⠀⠀⠀⢀⣀⣠⠴⠚⠉⠀⠈⠉⠻⣿⣯⠀⠀⢠⣶⠟⠋⠁⠀⠇⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀
-⠀⠀⠀⠀⢸⡀⠀⠀⣠⠴⠚⠋⠁⠀⣀⠀⣀⣀⣠⣤⣤⣿⣿⣧⠀⢸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
-⠀⠀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠘⠋⠉⠉⠉⠀⠀⠀⠀⠀⠹⣿⣿⠿⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
-⠀⠀⠀⠀⢀⣴⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⡄⣿⢿⣔⠤⣀⠈⠉⠻⢦⣄⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
-⠀⠀⠀⠀⣾⡿⠏⠻⢿⣶⣶⣦⣄⠀⠀⠀⠀⠘⠋⠠⠿⢿⣿⣾⡏⢿⣦⢄⡉⠒⠤⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠉⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀
-⠀⠀⠀⣼⡟⠀⠀⢠⡄⡈⣻⣿⢷⣯⣉⠓⢤⡀⠀⠀⠀⠀⠈⠙⠻⣶⣿⣧⠈⢓⣾⣿⡿⣫⣿⡿⠋⣼⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀
-⠀⠀⣰⡟⠀⠀⠀⠈⣧⠱⡄⢙⣧⣺⣿⣷⣦⡹⡦⡀⠀⠀⠀⠀⠀⠀⠹⢿⣷⣿⣿⢋⡼⠟⠋⢀⣾⣿⡿⠟⣝⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣧⣄⠀⠀⠀
-⠀⢠⡟⠀⠀⠀⠀⠀⣇⣧⣹⢻⡟⠋⠛⣻⣿⣿⠾⢮⣄⠀⠀⠀⠀⠀⠀⣼⡿⡟⡇⡀⠀⠀⢀⡾⠟⠉⣠⢾⠟⠁⠀⠀⠀⠀⠀⢀⣀⠤⣴⣾⣿⣿⣿⠃⣿⡿⣿⣿⣄⠙⢿⣦⠀
-⠀⣾⠁⠀⠀⠀⠀⢀⣿⡪⡿⣿⣀⢀⣤⣽⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡃⠧⡸⣣⠰⡀⠀⠀⠀⠀⠉⠁⢀⣀⠠⠤⠒⠒⠉⣁⣤⣾⣿⣿⣿⣋⣭⣿⣯⠾⢷⣿⣿⣷⡌⢏⠀
-⢸⡃⠀⠀⠀⠀⠀⢀⡿⣻⡿⢣⡈⠓⢌⡛⢿⣄⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣼⡀⢣⢫⢆⢣⣠⡤⡔⠒⠊⣉⣀⠤⠤⠒⠒⢉⣉⣠⣭⣿⡾⠿⠟⠛⠉⠁⠀⠀⠀⠈⠳⣌⣿⡌⢧
-⣟⡇⠀⠀⠀⠀⠀⢸⣷⡿⠁⠀⠈⠒⢄⡉⠢⣌⠻⢶⣤⣀⡀⠀⣾⣟⡙⠛⣿⣷⣬⣞⣟⣇⢧⢷⠓⣈⣉⣤⣤⠤⠶⠒⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⡌
-⣿⡇⣤⣤⣀⠀⠀⢨⡟⠁⠀⠀⠀⠀⠀⠉⠢⣄⠙⠢⢌⣚⢭⣛⠾⠿⠿⠿⠉⣿⣿⣿⣛⣬⣶⢿⠻⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡧
-⠿⠃⠀⠉⠛⢷⣦⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢝⡫⠖⣬⣙⠲⢤⣤⣾⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻
-⠀⠀⠀⠀⠀⣰⠏⠙⠣⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠋⢛⡷⢤⣛⣧⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠊⢎⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
-          </div>
-      </div>
-    </div>
   </main>
 
-  <!-- ============ CONTACT FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
   <footer id="contact" class="relative z-10 overflow-hidden py-24 border-t-2 border-ink/15 dark:border-shell/15 grid-bg">
     <pre aria-hidden="true" class="ascii-corner hidden sm:block top-10 right-4">·░▒▓
 ┌──┐ │
@@ -648,9 +618,9 @@
       </div>
 
       <pre aria-hidden="true" class="ascii ascii-static reveal mb-6 inline-block text-left mx-auto">+------------------------------------------+
-|  <span class="glow">></span> connection_request: <span class="glow">OPEN</span>              |
-|  <span class="glow">></span> status.............: available        |
-|  <span class="glow">></span> response_time......: ~24h             |
+|  <span class="glow">&gt;</span> connection_request: <span class="glow">OPEN</span>              |
+|  <span class="glow">&gt;</span> status.............: available         |
+|  <span class="glow">&gt;</span> response_time......: ~24h              |
 +------------------------------------------+</pre>
 
       <h2 class="display-hero text-5xl sm:text-7xl mb-4 reveal">Let's Connect</h2>
@@ -683,20 +653,13 @@
       </p>
     </div>
   </footer>
-  </div><!-- /#page-stage -->
+  </div>
 
-  <!-- ============ PAGE-TURN UI (progressive enhancement; hidden until JS) ============ -->
-  <!-- Vertical page indicator. Buttons are real controls so keyboard + AT work. -->
   <nav id="page-pager" aria-label="Page navigation" hidden></nav>
-  <!-- Transient oversized page number shown during a turn (decorative). -->
   <div class="pageturn-count" aria-hidden="true"></div>
-  <!-- Sweeping fold sheen during a turn (decorative). -->
   <div class="pageturn-fold" aria-hidden="true"></div>
-  <!-- Movement hint for first-time visitors. -->
   <div id="page-hint" aria-hidden="true"><i class="ri-arrow-up-down-line"></i> scroll or use ↑ ↓ to turn the page</div>
 
-  <!-- Prominent one-time intro tooltip for the page-turn, anchored near the pager.
-       Shown once per visitor (JS gates on localStorage) and dismissable. -->
   <div id="pageturn-intro" role="dialog" aria-label="New: page-turn navigation" hidden>
     <button id="pageturn-intro-close" type="button" aria-label="Dismiss">
       <i class="ri-close-line" aria-hidden="true"></i>
@@ -706,14 +669,6 @@
     <button id="pageturn-intro-ok" type="button" class="pt-intro-ok">Got it</button>
   </div>
 
-  <!-- ============ MUSIC PLAYER (progressive enhancement; off by default) ============
-       To use your OWN music: drop an audio file in the repo at
-         assets/audio/track.mp3
-       and it will play on a loop. To use a different file/URL instead, add a
-       data-src attribute to the element below, e.g.
-         data-src="assets/audio/my-song.mp3"
-       If no file is found, the player falls back to a generated ambient tone.
-       (See assets/audio/README.md for details.) -->
   <div id="music-player" role="group" aria-label="Music player" data-src="assets/audio/track.mp3" data-title="Sight of Silence from Gurumin">
     <button id="music-toggle" type="button" aria-pressed="false" aria-label="Play music" title="Play / pause music">
       <i class="ri-play-fill" aria-hidden="true"></i>
@@ -728,7 +683,7 @@
     </span>
   </div>
 
-  <!-- ============ SCRIPTS ============ -->
+  <!-- SCRIPTS -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/pageturn.js"></script>
   <script src="assets/js/music.js"></script>
