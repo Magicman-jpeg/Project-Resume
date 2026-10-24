@@ -632,4 +632,46 @@
         <a href="https://www.linkedin.com/in/jaycliffersonparevalo/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-linkedin-fill text-lg"></i></a>
         <a href="https://www.facebook.com/jayclifferson.arevalo" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-facebook-fill text-lg"></i></a>
         <a href="https://www.instagram.com/arevalo.depedqc/" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-instagram-line text-lg"></i></a>
-        <a href="https://discord.gg/5ktg7kau" target="_blank" rel="noopener" aria-label="Discord" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="
+        <a href="https://discord.gg/5ktg7kau" target="_blank" rel="noopener" aria-label="Discord" class="w-11 h-11 grid place-items-center rounded-full border-2 border-ink/20 dark:border-shell/20 hover:bg-atomic-orange hover:text-[var(--on-accent)] hover:border-atomic-orange transition-all"><i class="ri-discord-fill text-lg"></i></a>
+      </div>
+
+      <div class="reveal text-center text-xs text-ink/50 dark:text-shell/50 font-mono pt-4">
+        <p>&copy; <time data-current-year datetime="2026">2026</time> Jay Clifferson P. Arevalo. Built with HTML, CSS, GSAP &amp; care.</p>
+      </div>
+    </div>
+  </footer>
+
+  </div><!-- /#page-stage -->
+
+  <!-- ============ PAGETURN UI ============ -->
+  <div class="pageturn-fold" aria-hidden="true"></div>
+  <nav id="page-pager" hidden aria-label="Page navigation"></nav>
+  <div id="page-hint" class="is-hidden">
+    <i class="ri-arrow-down-line"></i>
+    <span>Scroll to turn the page</span>
+  </div>
+  <div class="pageturn-count" aria-hidden="true">01</div>
+  <div id="pageturn-intro" hidden role="dialog" aria-labelledby="pt-intro-title-text">
+    <button id="pageturn-intro-close" type="button" aria-label="Dismiss"><i class="ri-close-line"></i></button>
+    <p class="pt-intro-title"><i class="ri-book-open-line"></i> <span id="pt-intro-title-text">Page-Turn Mode</span></p>
+    <p class="pt-intro-body">Use <strong>scroll</strong> or <strong>arrow keys</strong> to turn pages. Click the dots on the right to jump to any section.</p>
+    <button id="pageturn-intro-ok" type="button" class="pt-intro-ok">Got it</button>
+  </div>
+
+  <!-- ============ MUSIC PLAYER ============ -->
+  <div id="music-player" hidden data-src="assets/audio/track.mp3">
+    <button id="music-toggle" type="button" aria-label="Play music" aria-pressed="false"><i class="ri-play-fill"></i></button>
+    <span id="music-eq" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span id="music-label"><span id="music-note" aria-hidden="true"></span><span id="music-title">music</span></span>
+    <span class="music-vol">
+      <i class="ri-volume-up-line" aria-hidden="true"></i>
+      <input id="music-volume" type="range" min="0" max="100" value="60" aria-label="Volume">
+    </span>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/pageturn.js"></script>
+  <script defer src="assets/js/music.js"></script>
+</body>
+</html>
