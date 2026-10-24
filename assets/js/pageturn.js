@@ -1,9 +1,5 @@
 'use strict';
 
-/* =====================================================================
-   Page-turn navigation — progressive enhancement
-   ===================================================================== */
-
 (function initPageTurn() {
   const root = document.documentElement;
   const stage = document.getElementById('page-stage');
@@ -202,7 +198,7 @@
     if ((goingDown && !atBottom) || (!goingDown && !atTop)) {
       return;
     }
-    // e.preventDefault(); <-- Commented out to allow free, smooth scrolling!
+    // e.preventDefault(); <-- INTENTIONALLY COMMENTED OUT TO ALLOW FREE SCROLLING
     const now = Date.now();
     if (animating || now < wheelCooldown) return;
     if (Math.abs(e.deltaY) < 8) return;
