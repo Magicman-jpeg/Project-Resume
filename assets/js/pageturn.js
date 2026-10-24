@@ -114,7 +114,10 @@
 
   function goTo(target, viaHash) {
     if (!engaged) {
-      pages[clamp(target)].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      pages[clamp(target)].scrollIntoView({
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
       return;
     }
     target = clamp(target);
@@ -195,10 +198,12 @@
     const atBottom = page.scrollTop + page.clientHeight >= page.scrollHeight - 2;
     const goingDown = e.deltaY > 0;
 
+    // Not at a boundary: let the page scroll natively.
     if ((goingDown && !atBottom) || (!goingDown && !atTop)) {
       return;
     }
-    // e.preventDefault(); <-- INTENTIONALLY COMMENTED OUT TO ALLOW FREE SCROLLING
+    // At a boundary: suppress native scroll so it can't fight the page turn.
+    e.preventDefault();
     const now = Date.now();
     if (animating || now < wheelCooldown) return;
     if (Math.abs(e.deltaY) < 8) return;
@@ -241,9 +246,14 @@
     if (!id) return;
     const target = pages.findIndex((p) => p.id === id);
     if (target === -1) return;
+
+    e.preventDefault();
     if (engaged) {
-      e.preventDefault();
       goTo(target);
+    } else {
+      const behavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
+      pages[clamp(target)].scrollIntoView({ behavior, block: 'start' });
+      history.replaceState(null, '', `#${id}`);
     }
   }
 
@@ -260,11 +270,10 @@
     showHintBriefly();
     showIntroOnce();
 
-    window.addEventListener('wheel', onWheel, { passive: true });
+    window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('keydown', onKey);
     window.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('touchend', onTouchEnd, { passive: true });
-    document.addEventListener('click', onAnchorClick);
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
 
@@ -288,7 +297,6 @@
     window.removeEventListener('keydown', onKey);
     window.removeEventListener('touchstart', onTouchStart);
     window.removeEventListener('touchend', onTouchEnd);
-    document.removeEventListener('click', onAnchorClick);
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
 
@@ -297,6 +305,9 @@
     if (shouldEngage) engage();
     else disengage();
   }
+
+  // Registered once: handles navbar links in both engaged and disengaged modes.
+  document.addEventListener('click', onAnchorClick);
 
   addMQListener(canEngage, evaluate);
   addMQListener(prefersReducedMotion, evaluate);
