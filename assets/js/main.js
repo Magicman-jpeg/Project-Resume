@@ -130,36 +130,40 @@ function initReveals() {
 }
 
 function initAsciiParallax() {
-  const layers = Array.from(document.querySelectorAll('.ascii-art-panel'));
-  if (reduceMotion || layers.length < 3 || !window.gsap || !window.ScrollTrigger) return;
+  const panels = Array.from(document.querySelectorAll('.ascii-art-panel'));
+  if (panels.length < 3) return;
+
+  // Reduced motion or no GSAP: drop any inline styles so CSS default opacity applies.
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) {
+    if (window.gsap) window.gsap.set(panels, { clearProps: 'opacity,visibility,yPercent' });
+    return;
+  }
 
   window.gsap.registerPlugin(window.ScrollTrigger);
-  window.gsap.set(layers, { autoAlpha: 0 });
   const peakOpacity = window.matchMedia('(max-width: 767px)').matches ? 0.1 : 0.12;
-  const timeline = window.gsap.timeline({
-    scrollTrigger: {
-      trigger: document.documentElement,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.65,
-      invalidateOnRefresh: true,
-    },
-  });
 
-  timeline
-    .fromTo(layers[0],
-      { autoAlpha: peakOpacity, yPercent: 10 },
-      { autoAlpha: peakOpacity, yPercent: -10, duration: 1, ease: 'none' }, 0)
-    .to(layers[0], { autoAlpha: 0, duration: 0.15, ease: 'none' }, 0.85)
-    .fromTo(layers[1],
-      { autoAlpha: 0, yPercent: 10 },
-      { autoAlpha: peakOpacity, yPercent: 6, duration: 0.15, ease: 'none' }, 0.78)
-    .to(layers[1], { yPercent: -10, duration: 0.85, ease: 'none' }, 0.93)
-    .to(layers[1], { autoAlpha: 0, duration: 0.15, ease: 'none' }, 1.63)
-    .fromTo(layers[2],
-      { autoAlpha: 0, yPercent: 9 },
-      { autoAlpha: peakOpacity, yPercent: 5, duration: 0.15, ease: 'none' }, 1.56)
-    .to(layers[2], { yPercent: -9, duration: 0.84, ease: 'none' }, 1.71);
+  // Visible by default (never autoAlpha: 0); ScrollTrigger only drives the parallax.
+  window.gsap.set(panels, { autoAlpha: peakOpacity });
+
+  panels.forEach((panel) => {
+    const section = panel.closest('section');
+    if (!section) return;
+    window.gsap.fromTo(
+      panel,
+      { yPercent: 10 },
+      {
+        yPercent: -10,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.65,
+          invalidateOnRefresh: true,
+        },
+      },
+    );
+  });
 }
 
 function initCardTilt() {
